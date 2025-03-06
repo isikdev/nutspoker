@@ -2,7 +2,6 @@
 @import "variables";
 @import "mixins";
 @import "base";
-@import "components/common";
 @import "components/header";
 @import "components/footer";
 @import "components/buttons";
@@ -15,10 +14,8 @@
 @import "components/community";
 @import "components/download";
 @import "components/mobile-menu";
-@import "components/responsible-gaming";
-@import "components/download-page";
 @import "promotions";
-@import "upromotions";
+
 .hero {
     background-color: #080808;
 }

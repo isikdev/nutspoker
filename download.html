@@ -14,6 +14,620 @@
         <link rel="stylesheet" href="./assets/scss/main.css">
         <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
             type="image/x-icon">
+        <style>
+            .header__language span:after {
+                display: none;
+            }
+            
+            /* Стили для страницы загрузки */
+            .download-hero {
+                position: relative;
+                background-image: url('./assets/img/download/dt_banner_bg.png');
+                background-size: cover;
+                background-position: center;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 80px 0;
+                overflow: hidden;
+            }
+            
+            .download-hero:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+            }
+            
+            .download-hero__container {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .download-hero__content {
+                flex: 1;
+                padding-right: 30px;
+                max-width: 400px;
+            }
+            .download-hero__content img {
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+            }
+            .download-hero__image {
+                flex: 1;
+                text-align: center;
+                max-width: 500px;
+            }
+            
+            .download-hero__image img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .download-hero__buttons {
+                display: flex;
+                gap: 15px;
+                margin-top: 30px;
+            }
+            
+            .download-hero__button {
+                transition: transform 0.3s ease;
+            }
+            
+            .download-hero__button:hover {
+                transform: translateY(-5px);
+            }
+            
+            .download-hero__button img {
+                max-width: 160px;
+            }
+            
+            /* Адаптивность */
+            @media (max-width: 992px) {
+                .download-hero__container {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .download-hero__content {
+                    padding-right: 0;
+                    margin-bottom: 40px;
+                    max-width: 100%;
+                }
+                
+                .download-hero__image {
+                    max-width: 80%;
+                }
+                
+                .download-hero__buttons {
+                    justify-content: center;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .download-hero {
+                    padding: 40px 0;
+                }
+                
+                .download-hero__buttons {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .download-hero__image {
+                    max-width: 100%;
+                }
+            }
+            
+            /* Стили для блока шагов скачивания */
+            .download-steps {
+                padding: 60px 0;
+                background-image: url("./assets/img/download/dt_content_1_step_bg.png");
+                background-size: cover;
+                background-position: center;
+                color: #ffffff;
+                position: relative;
+            }
+            
+            .download-steps__list {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            .download-step {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                min-width: 250px;
+                padding: 0 15px;
+            }
+            
+            .download-step__icon {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .download-step__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                text-transform: uppercase;
+                margin: 0;
+                color: #ffffff;
+            }
+            
+            .download-step__number {
+                color: #c8a758;
+                display: block;
+                margin-bottom: 5px;
+            }
+            
+            /* Медиа-запросы для адаптивности */
+            @media (max-width: 992px) {
+                .download-steps__list {
+                    justify-content: center;
+                }
+                
+                .download-step {
+                    flex: 0 0 calc(50% - 30px);
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .download-step {
+                    flex: 0 0 100%;
+                }
+                
+                .download-step__title {
+                    font-size: 24px;
+                }
+            }
+            
+            /* Стили для блока преимуществ платформы */
+            .platform-benefits {
+                padding: 80px 0;
+                background-image: url("./assets/img/download/dt_content_bg.png");
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+            
+            .benefits-list {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+            
+            .benefit-item {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                min-width: 280px;
+                padding: 0 15px;
+            }
+            
+            .benefit-item__icon {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .benefit-item__icon img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .benefit-item__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 1.3;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                color: #c8a758;
+            }
+            
+            .benefit-item__text {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #333333;
+                margin: 0;
+            }
+            
+            /* Медиа-запросы для адаптивности блока преимуществ */
+            @media (max-width: 992px) {
+                .benefits-list {
+                    justify-content: center;
+                }
+                
+                .benefit-item {
+                    flex: 0 0 calc(50% - 30px);
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .platform-benefits {
+                    padding: 50px 0;
+                }
+                
+                .benefit-item {
+                    flex: 0 0 100%;
+                    margin-bottom: 40px;
+                }
+                
+                .benefit-item:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .benefit-item__title {
+                    font-size: 20px;
+                }
+            }
+            
+            /* Стили для блока платежных методов */
+            .payment-methods {
+                padding: 60px 0;
+                background-image: url("./assets/img/download/dt_footer_payment_bg.png");
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+            
+            .payment-methods__list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .payment-methods__row {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 40px;
+                width: 100%;
+                max-width: 1000px;
+            }
+            
+            .payment-method {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                transition: transform 0.3s ease;
+            }
+            
+            .payment-method:hover {
+                transform: translateY(-5px);
+            }
+            
+            .payment-method img {
+                max-width: 200px;
+                height: auto;
+            }
+            
+            /* Адаптивность для платежных методов */
+            @media (max-width: 992px) {
+                .payment-methods__row {
+                    gap: 30px;
+                }
+                
+                .payment-method img {
+                    max-width: 120px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .payment-methods {
+                    padding: 40px 0;
+                }
+                
+                .payment-methods__list {
+                    gap: 30px;
+                }
+                
+                .payment-methods__row {
+                    gap: 20px;
+                }
+                
+                .payment-method img {
+                    max-width: 100px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .payment-methods__row {
+                    gap: 15px;
+                }
+                
+                .payment-method img {
+                    max-width: 80px;
+                }
+            }
+            
+            /* Стили для блока Terms & Conditions */
+            .terms-conditions {
+                padding: 70px 0;
+                background-color: #000000;
+                color: #ffffff;
+                position: relative;
+            }
+            
+            .terms-conditions__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 50px;
+                position: relative;
+                color: #ffffff;
+            }
+            
+            .terms-conditions__title:after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background-color: #c8a758;
+            }
+            
+            .terms-conditions__content {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+            
+            .terms-list {
+                list-style-type: none;
+                counter-reset: terms-counter;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .terms-list li {
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 15px;
+                font-size: 14px;
+                line-height: 1.6;
+                counter-increment: terms-counter;
+            }
+            
+            .terms-list li:before {
+                content: counter(terms-counter) ".";
+                position: absolute;
+                left: 0;
+                color: #ffffff;
+                font-weight: 600;
+            }
+            
+            .terms-list__footer {
+                margin-top: 30px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #c8a758;
+                text-align: left;
+            }
+            
+            /* Адаптивность для блока Terms & Conditions */
+            @media (max-width: 768px) {
+                .terms-conditions {
+                    padding: 50px 0;
+                }
+                
+                .terms-conditions__title {
+                    font-size: 28px;
+                    margin-bottom: 40px;
+                }
+                
+                .terms-list li {
+                    font-size: 13px;
+                    padding-left: 25px;
+                }
+                
+                .terms-list__footer {
+                    font-size: 13px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .terms-conditions__title {
+                    font-size: 24px;
+                }
+                
+                .terms-list li {
+                    font-size: 12px;
+                }
+                
+                .terms-list__footer {
+                    font-size: 12px;
+                }
+            }
+            
+            /* Стили для блока с юридической информацией */
+            .legal-info {
+                padding: 50px 0;
+                background-color: #000000;
+                color: #ffffff;
+                position: relative;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .legal-info__content {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+            
+            .legal-info__text {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+            
+            .legal-info__text:last-child {
+                margin-bottom: 0;
+            }
+            
+            .legal-info__text .highlight {
+                color: #c8a758;
+                text-decoration: underline;
+            }
+            
+            /* Адаптивность для блока юридической информации */
+            @media (max-width: 768px) {
+                .legal-info {
+                    padding: 40px 0;
+                }
+                
+                .legal-info__text {
+                    font-size: 13px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .legal-info {
+                    padding: 30px 0;
+                }
+                
+                .legal-info__text {
+                    font-size: 12px;
+                }
+            }
+            
+            /* Стили для блока с ссылками на страницы (футер) */
+            .footer-links {
+                padding: 50px 0 30px;
+                background-color: #000000;
+                color: #ffffff;
+                position: relative;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .footer-links__grid {
+                display: flex;
+                justify-content: flex-start;
+                gap: 80px;
+                margin-bottom: 50px;
+                flex-wrap: wrap;
+            }
+            
+            .footer-links__column {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-links__item {
+                font-family: 'Oswald', sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                color: #ffffff;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-links__item:hover {
+                color: #c8a758;
+            }
+            
+            .footer-copyright {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.6);
+                text-align: left;
+                padding-top: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            
+            .footer-copyright p {
+                margin: 0;
+            }
+            
+            /* Адаптивность для блока с ссылками */
+            @media (max-width: 992px) {
+                .footer-links__grid {
+                    gap: 40px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .footer-links {
+                    padding: 40px 0 25px;
+                }
+                
+                .footer-links__grid {
+                    gap: 30px;
+                    margin-bottom: 30px;
+                }
+                
+                .footer-links__column {
+                    gap: 15px;
+                }
+                
+                .footer-links__item {
+                    font-size: 13px;
+                }
+                
+                .footer-copyright {
+                    font-size: 13px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .footer-links {
+                    padding: 30px 0 20px;
+                }
+                
+                .footer-links__grid {
+                    flex-direction: column;
+                    gap: 20px;
+                    margin-bottom: 25px;
+                }
+                
+                .footer-links__column {
+                    gap: 10px;
+                }
+                
+                .footer-links__item {
+                    font-size: 12px;
+                }
+                
+                .footer-copyright {
+                    font-size: 12px;
+                }
+            }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -40,8 +654,8 @@
                                 class="header__dropdown-item">100% Match
                                 Bonus</a>
                             <a href="./first-deposit-offer.html"
-                                class="header__dropdown-item">$100 FIRST
-                                DEPOSIT OFFER</a>
+                                class="header__dropdown-item">$100 FIRST DEPOSIT
+                                OFFER</a>
                         </div>
                     </div>
                     <a href="./blog.html" class="header__nav-item">Blog</a>
@@ -73,43 +687,55 @@
             </div>
         </header>
 
+        <!-- Мобильное меню -->
         <div class="mobile-menu">
             <div class="mobile-menu__overlay"></div>
             <div class="mobile-menu__container">
-                <button class="mobile-menu__close" aria-label="Закрыть меню">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
                 <nav class="mobile-menu__nav">
-                    <a href="#" class="mobile-menu__nav-item">Tournaments</a>
-                    <a href="#" class="mobile-menu__nav-item">Promotions</a>
-                    <a href="#" class="mobile-menu__nav-item">Blog</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Tournaments</a>
+                    <div class="mobile-menu__dropdown-container">
+                        <a href="#" class="mobile-menu__dropdown-item">MTT
+                            Schedule</a>
+                    </div>
+
+                    <a href="./promotions.html"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Promotions</a>
+                    <div class="mobile-menu__dropdown-container">
+                        <a href="./match-bonus.html"
+                            class="mobile-menu__dropdown-item">100% Match
+                            Bonus</a>
+                        <a href="./first-deposit-offer.html"
+                            class="mobile-menu__dropdown-item">$100 FIRST
+                            DEPOSIT OFFER</a>
+                    </div>
+
+                    <a href="./blog.html" class="mobile-menu__nav-item">Blog</a>
                     <a href="./instant-rakeback.html"
                         class="mobile-menu__nav-item">Instant rake</a>
                     <a href="#"
-                        class="mobile-menu__nav-item">ЯЗЫК</a>
+                        class="mobile-menu__nav-item mobile-menu__language">ЯЗЫК</a>
+                    <div class="mobile-menu__language-options">
+                        <a href="#"
+                            class="mobile-menu__language-option">English</a>
+                        <a href="#"
+                            class="mobile-menu__language-option">Русский</a>
+                    </div>
                     <a href="./download.html"
                         class="mobile-menu__nav-item">Download</a>
-                    <a href="#"
-                        class="mobile-menu__nav-item">Browser play</a>
+                    <a href="#" class="mobile-menu__nav-item">Browser play</a>
                 </nav>
             </div>
         </div>
 
+        <!-- Основной контент страницы загрузки -->
         <section class="download-hero">
-            <div class="download-hero__container">
+            <div class="container download-hero__container">
                 <div class="download-hero__content">
-                    <h1 class="download-hero__title">Download <span>NUTS
-                            POKER</span></h1>
-                    <p class="download-hero__text">Play your favorite poker
-                        games anytime, anywhere with our sleek and intuitive
-                        app. Get access to exclusive tournaments, lightning-fast
-                        tables, and amazing bonuses.</p>
+                    <img src="./assets/img/download/txt_ru_nuts.png"
+                        alt="FIRST DEPOSIT BONUS UP TO $1000 REWARD"
+                        style="max-width: 100%; height: auto;">
+
                     <div class="download-hero__buttons">
                         <a href="#" class="download-hero__button">
                             <img src="./assets/img/download_android.png"
@@ -125,263 +751,280 @@
                         </a>
                     </div>
                 </div>
-                <!-- <img src="./assets/img/download/phones_nuts.ccf0e7b.png"
-                    alt="NUTS POKER App" class="download-hero__phone"> -->
-            </div>
-        </section>
 
-        <section class="download-section">
-            <div class="download-section__container">
-                <h2 class="download-section__title">Why Choose <span>NUTS
-                        POKER</span></h2>
-                <div class="download-features">
-                    <div class="download-feature">
-                        <div class="download-feature__icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="download-feature__title">Fast & Secure</h3>
-                        <p class="download-feature__text">Experience
-                            lightning-fast gameplay with our optimized app,
-                            backed by state-of-the-art security to keep your
-                            data and funds safe.</p>
-                    </div>
-                    <div class="download-feature">
-                        <div class="download-feature__icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="download-feature__title">Exciting
-                            Tournaments</h3>
-                        <p class="download-feature__text">Join daily
-                            tournaments with huge prize pools, special events,
-                            and exclusive competitions only available on our
-                            platform.</p>
-                    </div>
-                    <div class="download-feature">
-                        <div class="download-feature__icon">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <h3 class="download-feature__title">Amazing Bonuses</h3>
-                        <p class="download-feature__text">Enjoy generous welcome
-                            bonuses, regular promotions, and our loyalty program
-                            that rewards you just for playing your favorite
-                            games.</p>
-                    </div>
-                </div>
-
-                <div class="download-steps">
-                    <h2 class="download-section__title">How to <span>Get
-                            Started</span></h2>
-                    <div class="download-steps__list">
-                        <div class="download-step">
-                            <div class="download-step__number">1</div>
-                            <h3 class="download-step__title">Download the App
-                            </h3>
-                            <p class="download-step__text">Choose your platform
-                                and download the NUTS POKER app from our
-                                official website or app stores.</p>
-                        </div>
-                        <div class="download-step">
-                            <div class="download-step__number">2</div>
-                            <h3 class="download-step__title">Create an Account
-                            </h3>
-                            <p class="download-step__text">Sign up with your
-                                email or social media accounts and verify your
-                                details to secure your account.</p>
-                        </div>
-                        <div class="download-step">
-                            <div class="download-step__number">3</div>
-                            <h3 class="download-step__title">Make a Deposit</h3>
-                            <p class="download-step__text">Choose from our many
-                                secure payment methods to fund your account and
-                                claim your welcome bonus.</p>
-                        </div>
-                        <div class="download-step">
-                            <div class="download-step__number">4</div>
-                            <h3 class="download-step__title">Start Playing!</h3>
-                            <p class="download-step__text">Browse through our
-                                game selection, join a table or tournament, and
-                                start enjoying the NUTS POKER experience.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-faq">
-                    <h2 class="download-section__title">Frequently
-                        <span>Asked Questions</span></h2>
-                    <div class="download-faq__container">
-                        <div class="download-faq__item">
-                            <div class="download-faq__question">
-                                <div class="download-faq__question-text">Is the
-                                    NUTS POKER app free to download?</div>
-                                <div class="download-faq__icon">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="download-faq__answer">
-                                <div class="download-faq__answer-text">Yes, the
-                                    NUTS POKER app is completely free to
-                                    download on all platforms. There are no
-                                    hidden fees or charges for downloading and
-                                    installing our application.</div>
-                            </div>
-                        </div>
-
-                        <div class="download-faq__item">
-                            <div class="download-faq__question">
-                                <div class="download-faq__question-text">What
-                                    are the minimum system requirements?</div>
-                                <div class="download-faq__icon">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="download-faq__answer">
-                                <div class="download-faq__answer-text">
-                                    <p><strong>For Android:</strong> Android 5.0
-                                        or higher, 2GB RAM, 200MB free space</p>
-                                    <p><strong>For iOS:</strong> iOS 12.0 or
-                                        later, compatible with iPhone, iPad, and
-                                        iPod touch</p>
-                                    <p><strong>For Windows:</strong> Windows 8
-                                        or later, 4GB RAM, 500MB free space,
-                                        Intel Core i3 or equivalent</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="download-faq__item">
-                            <div class="download-faq__question">
-                                <div class="download-faq__question-text">Is
-                                    playing poker on NUTS POKER legal?</div>
-                                <div class="download-faq__icon">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="download-faq__answer">
-                                <div class="download-faq__answer-text">NUTS
-                                    POKER is licensed and regulated, ensuring a
-                                    legal poker experience. However, it's your
-                                    responsibility to ensure that online poker
-                                    is legal in your jurisdiction before
-                                    playing. Please check your local laws and
-                                    regulations.</div>
-                            </div>
-                        </div>
-
-                        <div class="download-faq__item">
-                            <div class="download-faq__question">
-                                <div class="download-faq__question-text">Can I
-                                    play for free without making a
-                                    deposit?</div>
-                                <div class="download-faq__icon">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="download-faq__answer">
-                                <div class="download-faq__answer-text">Yes!
-                                    NUTS POKER offers play money tables where
-                                    you can practice and enjoy poker without
-                                    risking real money. New accounts receive a
-                                    starter pack of play chips that you can use
-                                    on these tables.</div>
-                            </div>
-                        </div>
-
-                        <div class="download-faq__item">
-                            <div class="download-faq__question">
-                                <div class="download-faq__question-text">How do
-                                    I update the app to the latest
-                                    version?</div>
-                                <div class="download-faq__icon">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                            </div>
-                            <div class="download-faq__answer">
-                                <div class="download-faq__answer-text">For
-                                    mobile devices, updates are typically
-                                    handled through the App Store or Google Play
-                                    Store. For Windows, the application will
-                                    notify you when an update is available and
-                                    guide you through the update process.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="download-cta">
-                    <h2 class="download-cta__title">Ready to join the game?</h2>
-                    <p>Download NUTS POKER now and start your poker journey with
-                        a generous welcome bonus!</p>
-                    <div class="download-cta__buttons">
-                        <a href="#" class="download-hero__button">
-                            <img src="./assets/img/download_android.png"
-                                alt="Download for Android">
-                        </a>
-                        <a href="#" class="download-hero__button">
-                            <img src="./assets/img/download_app_store.png"
-                                alt="Download for iOS">
-                        </a>
-                        <a href="#" class="download-hero__button">
-                            <img src="./assets/img/download_windows.png"
-                                alt="Download for Windows">
-                        </a>
-                    </div>
+                <div class="download-hero__image">
+                    <img src="./assets/img/download/phones_nuts.ccf0e7b.png"
+                        alt="NUTS POKER App">
                 </div>
             </div>
         </section>
 
-        <footer class="footer">
+        <!-- Блок с шагами скачивания -->
+        <section class="download-steps">
             <div class="container">
-                <div class="footer__main">
-                    <div class="footer__logo">
-                        <img
-                            src="https://nutspoker.cc/img/layout/footer/NP_Logo_web.png"
-                            alt="NUTS POKER" class="footer__logo-img">
-                        <p class="footer__domain">NUTSPOKER.CC</p>
+                <div class="download-steps__list">
+                    <!-- Шаг 1 -->
+                    <div class="download-step">
+                        <div class="download-step__icon">
+                            <img src="./assets/img/download/step1.png"
+                                alt="STEP 1">
+                        </div>
+                        <div class="download-step__content">
+                            <h3 class="download-step__title">
+                                <span class="download-step__number">ШАГ 1</span>
+                                СКАЧАЙТЕ<br>
+                                ПРИЛОЖЕНИЕ NUTS<br>
+                                POKER
+                            </h3>
+                        </div>
                     </div>
-                </div>
 
-                <div class="footer__bottom">
-                    <div class="footer__copyright">
-                        Copyright © NutsPoker. All Rights Reserved.
+                    <!-- Шаг 2 -->
+                    <div class="download-step">
+                        <div class="download-step__icon">
+                            <img src="./assets/img/download/step2.png"
+                                alt="STEP 2">
+                        </div>
+                        <div class="download-step__content">
+                            <h3 class="download-step__title">
+                                <span class="download-step__number">ШАГ 2</span>
+                                ЗАРЕГИСТРИРУЙТЕСЬ<br>
+                                И ВНЕСИТЕ<br>
+                                ДЕПОЗИТ
+                            </h3>
+                        </div>
                     </div>
-                    <div class="footer__certificates">
-                        <img src="assets/img/footer/1.png"
-                            alt="Gambling License" class="footer__cert-img">
-                        <img
-                            src="https://nutspoker.cc/img/layout/footer/gli.jpeg"
-                            alt="gli"
-                            class="footer__cert-img">
-                        <img
-                            src="https://nutspoker.cc/img/layout/footer/icon_08.png"
-                            alt="Security Certificate" class="footer__cert-img">
-                        <img
-                            src="https://nutspoker.cc/img/layout/footer/GambleAware.png"
-                            alt="GambleAware"
-                            class="footer__cert-img">
-                        <img
-                            src="https://nutspoker.cc/img/layout/footer/icon_10.png"
-                            alt="18+"
-                            class="footer__cert-img">
+
+                    <!-- Шаг 3 -->
+                    <div class="download-step">
+                        <div class="download-step__icon">
+                            <img src="./assets/img/download/step3.png"
+                                alt="STEP 3">
+                        </div>
+                        <div class="download-step__content">
+                            <h3 class="download-step__title">
+                                <span class="download-step__number">ШАГ 3</span>
+                                НАСЛАЖДАЙТЕСЬ<br>
+                                БОНУСОМ*
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- Блок с преимуществами платформы -->
+        <section class="platform-benefits">
+            <div class="container">
+                <div class="benefits-list">
+                    <!-- Преимущество 1: Лицензированная платформа -->
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon">
+                            <img src="./assets/img/download/shield_1.png"
+                                alt="Лицензированная платформа">
+                        </div>
+                        <div class="benefit-item__content">
+                            <h3 class="benefit-item__title">ЛИЦЕНЗИРОВАННАЯ
+                                И<br>НАДЕЖНАЯ ПОКЕРНАЯ<br>ПЛАТФОРМА</h3>
+                            <p class="benefit-item__text">ИГРАЙТЕ БЕЗОПАСНО,
+                                ЗАРАБАТЫВАЙТЕ<br>БОЛЬШЕ И ВЫХОДИТЕ
+                                НА<br>МЕЖДУНАРОДНЫЙ УРОВЕНЬ!</p>
+                        </div>
+                    </div>
+
+                    <!-- Преимущество 2: Ежедневные награды -->
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon">
+                            <img src="./assets/img/download/shield_2.png"
+                                alt="Ежедневные награды">
+                        </div>
+                        <div class="benefit-item__content">
+                            <h3 class="benefit-item__title">ЕЖЕДНЕВНЫЕ
+                                НАГРАДЫ</h3>
+                            <p class="benefit-item__text">БОЛЕЕ $500.000 В
+                                ЕЖЕМЕСЯЧНЫХ<br>РОЗЫГРЫШАХ</p>
+                        </div>
+                    </div>
+
+                    <!-- Преимущество 3: Бонус для новичков -->
+                    <div class="benefit-item">
+                        <div class="benefit-item__icon">
+                            <img src="./assets/img/download/shield_3.png"
+                                alt="Бонус для новичков">
+                        </div>
+                        <div class="benefit-item__content">
+                            <h3 class="benefit-item__title">ПОТРЯСАЮЩИЙ БОНУС
+                                ДЛЯ<br>НОВИЧКОВ</h3>
+                            <p class="benefit-item__text">100% НА БОНУСНЫЙ
+                                ДЕПОЗИТ или $100<br>БОНУС ЗА ВЫПОЛНЕНИЕ
+                                МИССИЙ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок с платежными методами -->
+        <section class="payment-methods">
+            <div class="container">
+                <div class="payment-methods__list">
+                    <!-- Первый ряд логотипов -->
+                    <div class="payment-methods__row">
+                        <div class="payment-method">
+                            <img
+                                src="./assets/img/download/pay/1.png"
+                                alt="AstroPay">
+                        </div>
+                        <div class="payment-method">
+                            <img
+                                src="./assets/img/download/pay/2.png"
+                                alt="CashtoCode">
+                        </div>
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/3.png"
+                                alt="ecoPayz">
+                        </div>
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/4.png"
+                                alt="Interac">
+                        </div>
+                    </div>
+                    <!-- Второй ряд логотипов -->
+                    <div class="payment-methods__row">
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/5.png"
+                                alt="LUXON">
+                        </div>
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/6.png"
+                                alt="MuchBetter">
+                        </div>
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/7.png"
+                                alt="MasterCard and VISA">
+                        </div>
+                        <div class="payment-method">
+                            <img src="./assets/img/download/pay/8.png"
+                                alt="MasterCard and VISA">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок Terms & Conditions -->
+        <section class="terms-conditions">
+            <div class="container">
+                <h2 class="terms-conditions__title">TERMS & CONDITIONS</h2>
+
+                <div class="terms-conditions__content">
+                    <ol class="terms-list">
+                        <li>Event Period: 14 days from the first login time
+                            commencing from 1 December 2022, 10:00 (GMT+0).</li>
+                        <li>Only players who have NOT deposited in their KKPoker
+                            accounts prior to 1 December 2022, 10:00 (GMT+0)
+                            (Eligible Players) are eligible to join this
+                            Event.</li>
+                        <li>If the first deposit that the Eligible Players made
+                            into their KKPoker account during the Event Period
+                            is of USD20.00 or more, they will receive a reward
+                            of four $5 Spinlicity tickets (not repeatable) and
+                            will become eligible to complete Event missions
+                            (accumulative and not repeatable). This reward must
+                            be claimed.</li>
+                        <li>Eligible Players can only participate in the Event
+                            missions during the Event Period. After the Event
+                            Period has passed, the Eligible Player will no
+                            longer be able to participate in any of the Event
+                            missions and any unclaimed rewards will expire and
+                            be forfeited.</li>
+                        <li>An Eligible Player must complete Level 2 ID
+                            Verification before he/she may claim the
+                            corresponding reward from Event missions.</li>
+                        <li>This Event is not mutually exclusive with other
+                            deposit bonus related events.</li>
+                        <li>Any suspected fraudulent or prohibited behaviour
+                            found engaged by players may result in their bonus
+                            being forfeited and their KKPoker accounts being
+                            suspended.</li>
+                        <li>KKPoker reserves the right to cancel this Event at
+                            any time without prior notice.</li>
+                        <li>All matters and disputes are subject to the final
+                            decision of KKPoker.</li>
+                    </ol>
+                    <p class="terms-list__footer">Your participation in this
+                        promotion is subject to the General Terms and Conditions
+                        for KKPoker Promotions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок с юридической информацией -->
+        <section class="legal-info">
+            <div class="container">
+                <div class="legal-info__content">
+                    <p class="legal-info__text">The products and services that
+                        KKPoker offers (via its websites, tablet and mobile
+                        applications) are together referred to as the
+                        "Services".</p>
+
+                    <p class="legal-info__text">Access to Services may not be
+                        legal for residents of, or persons located in, certain
+                        countries. Services provided hereunder do not constitute
+                        an offer, solicitation or invitation by KKPoker for the
+                        use of, or subscription to, betting, gaming or other
+                        services in any jurisdiction in which such activities
+                        are prohibited by law. In particular, residents of or
+                        persons located in the United States shall not use any
+                        of the Services.</p>
+
+                    <p class="legal-info__text">KKPoker is a brand and
+                        registered business name, owned by Aceking IOM Limited
+                        (company number 017019V), 49 Victoria Street, Douglas,
+                        Isle of Man, IM1 2LD.</p>
+
+                    <p class="legal-info__text">Regulated & Licensed by Isle of
+                        Man Gambling Supervision Commission pursuant to the
+                        Online Gambling Regulation Act 2001 since 24th July,
+                        2019 (Last Renewal: 24th July, 2024). Persons under the
+                        age of 18 are not allowed to create accounts and/or
+                        participate in gambling. All online gambling debts are
+                        enforceable in law in the Isle of Man.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок с ссылками на страницы -->
+        <section class="footer-links">
+            <div class="container">
+                <div class="footer-links__grid">
+                    <div class="footer-links__column">
+                        <a href="#" class="footer-links__item">ABOUT US</a>
+                        <a href="#" class="footer-links__item">CONTACT US</a>
+                        <a href="#" class="footer-links__item">GAME
+                            INTEGRITY</a>
+                    </div>
+                    <div class="footer-links__column">
+                        <a href="#" class="footer-links__item">PRIVACY
+                            POLICY</a>
+                        <a href="#" class="footer-links__item">TERMS OF
+                            SERVICE</a>
+                        <a href="#" class="footer-links__item">COOKIE NOTICE</a>
+                    </div>
+                    <div class="footer-links__column">
+                        <a href="#" class="footer-links__item">DEPOSIT &
+                            WITHDRAWAL POLICY</a>
+                        <a href="#" class="footer-links__item">RESPONSIBLE
+                            GAMING</a>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>Copyright © 2024 KKPoker. All Rights Reserved.</p>
+                </div>
+            </div>
+        </section>
 
         <script src="./assets/js/main.js"></script>
-        <div id="google_translate_element"></div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const faqItems = document.querySelectorAll('.download-faq__item');
-                
-                faqItems.forEach(item => {
-                    const question = item.querySelector('.download-faq__question');
-                    
-                    question.addEventListener('click', () => {
-                        item.classList.toggle('active');
-                    });
-                });
-            });
-        </script>
+        <div id="google_translate_element" style="display: none;"></div>
     </body>
 </html>

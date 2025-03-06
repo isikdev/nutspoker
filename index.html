@@ -14,6 +14,11 @@
         <link rel="stylesheet" href="./assets/scss/main.css">
         <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
             type="image/x-icon">
+        <style>
+                .header__language span:after {
+                    display: none;
+                }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -73,6 +78,7 @@
             </div>
         </header>
 
+        <!-- Мобильное меню -->
         <div class="mobile-menu">
             <div class="mobile-menu__overlay"></div>
             <div class="mobile-menu__container">
@@ -92,11 +98,16 @@
                     <a href="./instant-rakeback.html"
                         class="mobile-menu__nav-item">Instant rake</a>
                     <a href="#"
-                        class="mobile-menu__nav-item">ЯЗЫК</a>
+                        class="mobile-menu__nav-item mobile-menu__language">Language</a>
+                    <div class="mobile-menu__language-options">
+                        <a href="#"
+                            class="mobile-menu__language-option">English</a>
+                        <a href="#"
+                            class="mobile-menu__language-option">Русский</a>
+                    </div>
                     <a href="./download.html"
                         class="mobile-menu__nav-item">Download</a>
-                    <a href="#"
-                        class="mobile-menu__nav-item">Browser play</a>
+                    <a href="#" class="mobile-menu__nav-item">Browser play</a>
                 </nav>
             </div>
         </div>
@@ -104,100 +115,161 @@
         <section class="hero">
             <div class="container hero__container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Power up your <span
-                            class="hero__title-accent">POKER</span> game</h1>
-                    <p class="hero__text">Join NUTS POKER and experience
-                        cutting-edge features, exciting tournaments, and awesome
-                        bonuses!</p>
-                    <div class="hero__buttons">
-                        <a href="#" class="button button--primary">Play Now</a>
-                        <a href="#" class="button button--secondary">Learn
-                            More</a>
-                    </div>
+                    <h1 class="hero__title">Made for <span>mobile</span> faster,
+                        smoother,
+                        fresher than ever!</h1>
+
                 </div>
-                <div class="hero__slider">
-                    <div class="slider">
-                        <div class="slider__track">
-                            <div class="slider__slide">
-                                <img src="./assets/img/slider/banner1.jpg"
-                                    alt="Slide 1" class="slider__image">
+
+                <div class="hero__image">
+
+                    <div class="promo-slider">
+                        <div class="promo-slider__container">
+                            <div class="promo-slider__wrapper">
+                                <div class="promo-slider__slides">
+                                    <div class="promo-slider__slide"
+                                        data-slide="0">
+                                        <img src="./assets/img/slider/1.jpg"
+                                            alt="1">
+                                    </div>
+
+                                    <div class="promo-slider__slide"
+                                        data-slide="1">
+                                        <img src="./assets/img/slider/2.jpg"
+                                            alt="2">
+                                    </div>
+
+                                    <div class="promo-slider__slide"
+                                        data-slide="2">
+                                        <img src="./assets/img/slider/3.jpg"
+                                            alt="3">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="slider__slide">
-                                <img src="./assets/img/slider/banner2.jpg"
-                                    alt="Slide 2" class="slider__image">
-                            </div>
-                            <div class="slider__slide">
-                                <img src="./assets/img/slider/banner3.jpg"
-                                    alt="Slide 3" class="slider__image">
+
+                            <div class="promo-slider__nav">
+                                <div
+                                    class="promo-slider__nav-button promo-slider__nav-prev">
+                                    <svg width="24" height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 18L9 12L15 6"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="promo-slider__nav-button promo-slider__nav-next">
+                                    <svg width="24" height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 18L15 12L9 6"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="slider__dots">
-                            <button class="slider__dot slider__dot--active"
-                                data-index="0"></button>
-                            <button class="slider__dot" data-index="1"></button>
-                            <button class="slider__dot" data-index="2"></button>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn--download">
+                                <img src="./assets/img/download_android.png"
+                                    alt="Android">
+                            </a>
+
+                            <a href="#" class="btn btn--download">
+                                <img src="./assets/img/download_browser.png"
+                                    alt="Browser">
+                            </a>
                         </div>
-                        <button class="slider__arrow slider__arrow--prev">
-                            <svg viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 18L9 12L15 6" stroke="white"
-                                    stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <button class="slider__arrow slider__arrow--next">
-                            <svg viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 18L15 12L9 6" stroke="white"
-                                    stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <section class="features">
             <div class="container">
-                <h2 class="section-title">Why Choose <span
-                        class="section-title__accent">NUTS POKER</span></h2>
+                <h2 class="features__heading">NUTS POKER - MADE FOR YOU</h2>
                 <div class="features__grid">
-                    <div class="feature-card">
-                        <div class="feature-card__icon">
-                            <img src="./assets/img/features/icon1.svg"
-                                alt="Fast Tables">
+                    <!-- Карточка 1 -->
+                    <div class="features__card">
+                        <div class="features__card-content">
+                            <div class="features__card-icon">
+                                <img
+                                    src="./assets/img/features/icon-cashback.svg"
+                                    alt="Cashback Icon">
+                            </div>
+                            <h3 class="features__card-title">GUARANTEED
+                                CASHBACK</h3>
+                            <p class="features__card-text">Up to 50% Instant
+                                Rakeback can be collected after every game!</p>
                         </div>
-                        <h3 class="feature-card__title">Fast Tables</h3>
-                        <p class="feature-card__text">Experience lightning-fast
-                            gameplay with our optimized table mechanics.</p>
+                        <div class="features__card-image">
+                            <img src="./assets/img/features/phone-cashback.png"
+                                alt="Cashback Phone">
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-card__icon">
-                            <img src="./assets/img/features/icon2.svg"
-                                alt="Secure Platform">
+
+                    <!-- Карточка 2 -->
+                    <div class="features__card">
+                        <div class="features__card-content">
+                            <div class="features__card-icon">
+                                <img src="./assets/img/features/icon-global.svg"
+                                    alt="Global Players Icon">
+                            </div>
+                            <h3 class="features__card-title">GLOBAL PLAYERS</h3>
+                            <p class="features__card-text">A variety of exciting
+                                games running 24/7!</p>
                         </div>
-                        <h3 class="feature-card__title">Secure Platform</h3>
-                        <p class="feature-card__text">Play with peace of mind on
-                            our fully encrypted and secure poker platform.</p>
+                        <div class="features__card-image">
+                            <img src="./assets/img/features/phone-global.png"
+                                alt="Global Players Phone">
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-card__icon">
-                            <img src="./assets/img/features/icon3.svg"
-                                alt="Mobile Ready">
+
+                    <!-- Карточка 3 -->
+                    <div class="features__card">
+                        <div class="features__card-content">
+                            <div class="features__card-icon">
+                                <img
+                                    src="./assets/img/features/icon-bonuses.svg"
+                                    alt="Bonuses Icon">
+                            </div>
+                            <h3 class="features__card-title">NON-STOP
+                                BONUSES</h3>
+                            <p class="features__card-text">Play to earn HUGE
+                                rewards from our Leaderboards, Cash Storm,
+                                Mission and Jackpots.</p>
                         </div>
-                        <h3 class="feature-card__title">Mobile Ready</h3>
-                        <p class="feature-card__text">Play your favorite poker
-                            games anytime, anywhere on our mobile app.</p>
+                        <div class="features__card-image">
+                            <img src="./assets/img/features/phone-bonuses.png"
+                                alt="Bonuses Phone">
+                        </div>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-card__icon">
-                            <img src="./assets/img/features/icon4.svg"
-                                alt="24/7 Support">
+
+                    <!-- Карточка 4 -->
+                    <div class="features__card">
+                        <div class="features__card-content">
+                            <div class="features__card-icon">
+                                <img src="./assets/img/features/icon-funds.svg"
+                                    alt="Protected Funds Icon">
+                            </div>
+                            <h3 class="features__card-title">FUNDS
+                                PROTECTED</h3>
+                            <p class="features__card-text">Fully licensed by the
+                                Offshore Finance Authority of The State of
+                                Anjouan.</p>
                         </div>
-                        <h3 class="feature-card__title">24/7 Support</h3>
-                        <p class="feature-card__text">Our dedicated support team
-                            is always ready to assist you.</p>
+                        <div class="features__card-image">
+                            <img src="./assets/img/features/phone-funds.png"
+                                alt="Protected Funds Phone">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,53 +277,63 @@
 
         <section class="promotions">
             <div class="container">
-                <h2 class="section-title">Latest <span
-                        class="section-title__accent">Promotions</span></h2>
-                <div class="promotions__grid">
-                    <div class="promotion-card">
-                        <div class="promotion-card__image">
-                            <img src="./assets/img/promotions/promo1.jpg"
-                                alt="Welcome Bonus">
-                        </div>
-                        <div class="promotion-card__content">
-                            <h3 class="promotion-card__title">Welcome Bonus</h3>
-                            <p class="promotion-card__text">Get up to $1000 on
-                                your first deposit with our 100% match
-                                bonus.</p>
-                            <a href="#"
-                                class="promotion-card__button button button--secondary">Claim
-                                Now</a>
+                <h2 class="promotions__heading">TRENDING
+                    <span>PROMOTIONS</span></h2>
+            </div>
+
+            <div class="promotions__slider">
+                <div class="promotions__slider-container">
+                    <div class="promotions__slider-wrapper">
+                        <div class="promotions__slider-slides">
+                            <!-- Слайд 1: 7-2 CRAZY PLAY -->
+                            <div
+                                class="promotions__slider-slide promotions__slider-slide--prev"
+                                data-slide="0">
+                                <img
+                                    src="./assets/img/slider/1.jpg"
+                                    alt="7-2 CRAZY PLAY">
+                            </div>
+
+                            <!-- Слайд 2: MTT LEADERBOARD -->
+                            <div
+                                class="promotions__slider-slide promotions__slider-slide--active"
+                                data-slide="1">
+                                <img
+                                    src="./assets/img/slider/2.jpg"
+                                    alt="MTT LEADERBOARD">
+                            </div>
+
+                            <!-- Слайд 3: SPINUP -->
+                            <div
+                                class="promotions__slider-slide promotions__slider-slide--next"
+                                data-slide="2">
+                                <img src="./assets/img/slider/3.jpg"
+                                    alt="SPINUP">
+                            </div>
                         </div>
                     </div>
-                    <div class="promotion-card">
-                        <div class="promotion-card__image">
-                            <img src="./assets/img/promotions/promo2.jpg"
-                                alt="Weekend Tournaments">
+                </div>
+
+                <!-- Навигационная панель (внутри слайдера) -->
+                <div class="promotions__nav">
+                    <div class="promotions__nav-container">
+                        <div
+                            class="promotions__nav-button promotions__nav-prev">
+                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                         </div>
-                        <div class="promotion-card__content">
-                            <h3 class="promotion-card__title">Weekend
-                                Tournaments</h3>
-                            <p class="promotion-card__text">Join our special
-                                weekend tournaments with guaranteed prize
-                                pools.</p>
-                            <a href="#"
-                                class="promotion-card__button button button--secondary">View
-                                Schedule</a>
-                        </div>
-                    </div>
-                    <div class="promotion-card">
-                        <div class="promotion-card__image">
-                            <img src="./assets/img/promotions/promo3.jpg"
-                                alt="Rakeback Rewards">
-                        </div>
-                        <div class="promotion-card__content">
-                            <h3 class="promotion-card__title">Rakeback
-                                Rewards</h3>
-                            <p class="promotion-card__text">Earn up to 30%
-                                rakeback on every hand you play.</p>
-                            <a href="#"
-                                class="promotion-card__button button button--secondary">Learn
-                                More</a>
+                        <div
+                            class="promotions__nav-button promotions__nav-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -260,68 +342,61 @@
 
         <section class="news">
             <div class="container">
-                <h2 class="section-title">Latest <span
-                        class="section-title__accent">News</span></h2>
-                <div class="news__grid">
-                    <div class="news-card">
-                        <div class="news-card__image">
-                            <img src="./assets/img/news/news1.jpg"
-                                alt="New Tournament Series">
-                        </div>
-                        <div class="news-card__content">
-                            <div class="news-card__date">June 15, 2023</div>
-                            <h3 class="news-card__title">New Tournament Series
-                                Announced</h3>
-                            <p class="news-card__text">Join our upcoming
-                                tournament series with over $1 million in
-                                guaranteed prizes.</p>
-                            <a href="#" class="news-card__link">Read More</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-card__image">
-                            <img src="./assets/img/news/news2.jpg"
-                                alt="Mobile App Update">
-                        </div>
-                        <div class="news-card__content">
-                            <div class="news-card__date">June 10, 2023</div>
-                            <h3 class="news-card__title">Mobile App Update
-                                Released</h3>
-                            <p class="news-card__text">Our latest mobile app
-                                update brings new features and improvements.</p>
-                            <a href="#" class="news-card__link">Read More</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-card__image">
-                            <img src="./assets/img/news/news3.jpg"
-                                alt="Poker Strategy Guide">
-                        </div>
-                        <div class="news-card__content">
-                            <div class="news-card__date">June 5, 2023</div>
-                            <h3 class="news-card__title">Ultimate Poker Strategy
-                                Guide</h3>
-                            <p class="news-card__text">Learn from the pros with
-                                our comprehensive poker strategy guide.</p>
-                            <a href="#" class="news-card__link">Read More</a>
-                        </div>
-                    </div>
+                <h2 class="news__heading">NUTS POKER <span>NEWS</span></h2>
+            </div>
+
+            <div class="news__container">
+                <div class="news__image">
+                    <img
+                        src="https://kkpoker.s3.us-west-2.amazonaws.com/website/cumqu31cfdvs8q997t9g.jpg"
+                        alt="Hand Review Feature">
+                </div>
+
+                <div class="news__content">
+                    <h3 class="news__title">Relive Your Poker Action With The
+                        New Hand Review</h3>
+                    <p class="news__text">The new NUTS POKER Hand Review feature
+                        makes viewing your poker hand history simple and
+                        convenient!</p>
+                    <a href="#" class="news__link">READ MORE</a>
                 </div>
             </div>
         </section>
 
         <section class="community">
-            <div class="container community__container">
+            <div class="community__container">
+                <h2 class="community__heading">KKPOKER COMMUNITY</h2>
                 <div class="community__content">
-                    <h2 class="community__title">Join Our
-                        <span>Community</span></h2>
-                    <p class="community__text">Connect with players from around
-                        the world, share your poker journey, and stay updated
-                        with the latest news and events.</p>
-                    <a href="#"
-                        class="community__button button button--primary">Join
-                        Now</a>
-                    <div class="community__icon">
+                    <div class="community__info">
+                        <h3 class="community__title">KKPOKER LIVE</h3>
+                        <p class="community__text">Eager to know more about
+                            KKPoker's latest news and promotions? Make sure you
+                            have followed us across all our platforms, including
+                            Facebook and Instagram, so that you won't miss our
+                            latest offers and rewards! Join our community
+                            NOW</p>
+                        <a href="#" class="community__watch-btn">WATCH NOW</a>
+                    </div>
+                    <div class="community__video">
+                        <div class="community__video-container">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                                title="KKPOKER LIVE TOKYO 2022" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="community__nav">
+                    <div class="community__nav-button community__nav-prev">
+                        <svg viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 18L9 12L15 6" stroke="white"
+                                stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="community__nav-button community__nav-next">
                         <svg viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 18L15 12L9 6" stroke="white"
@@ -418,6 +493,6 @@
         </footer>
 
         <script src="./assets/js/main.js"></script>
-        <div id="google_translate_element"></div>
+        <div id="google_translate_element" style="display: none;"></div>
     </body>
 </html>

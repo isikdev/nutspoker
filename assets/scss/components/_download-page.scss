@@ -1,0 +1,309 @@
+.download-hero {
+    position: relative;
+    background-image: url("../img/download/dt_banner_bg.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.download-hero__container {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.download-hero__content {
+    max-width: 600px;
+}
+
+.download-hero__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.download-hero__title span {
+    color: #b19252;
+}
+
+.download-hero__text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.download-hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.download-hero__button {
+    display: inline-block;
+}
+
+.download-hero__button img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.download-hero__button:hover img {
+    transform: translateY(-5px);
+}
+
+.download-hero__phone {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    max-height: 90vh;
+    z-index: 1;
+}
+
+.download-section {
+    padding: 80px 0;
+}
+
+.download-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.download-section__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.download-section__title span {
+    color: #b19252;
+}
+
+.download-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.download-feature {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f9f9f7;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.download-feature:hover {
+    transform: translateY(-10px);
+}
+
+.download-feature__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: #b19252;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.download-feature__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.download-feature__text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.download-steps {
+    margin-top: 80px;
+}
+
+.download-steps__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.download-step {
+    position: relative;
+    padding-left: 60px;
+}
+
+.download-step__number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    background-color: #b19252;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.download-step__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.download-step__text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.download-faq {
+    margin-top: 80px;
+}
+
+.download-faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.download-faq__item {
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.download-faq__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f7;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-faq__question:hover {
+    background-color: #f0f0f0;
+}
+
+.download-faq__question-text {
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+.download-faq__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.download-faq__item.active .download-faq__icon {
+    transform: rotate(180deg);
+}
+
+.download-faq__answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+}
+
+.download-faq__item.active .download-faq__answer {
+    padding: 0 20px 20px;
+    max-height: 500px;
+}
+
+.download-faq__answer-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.download-cta {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.download-cta__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.download-cta__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .download-hero__phone {
+        right: 0;
+        max-height: 70vh;
+    }
+
+    .download-hero__content {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-hero {
+        min-height: auto;
+        padding: 100px 0;
+    }
+
+    .download-hero__content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .download-hero__buttons {
+        justify-content: center;
+    }
+
+    .download-hero__phone {
+        display: none;
+    }
+
+    .download-features {
+        grid-template-columns: 1fr;
+    }
+
+    .download-steps__list {
+        grid-template-columns: 1fr;
+    }
+}

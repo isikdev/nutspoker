@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instant Rakeback - NUTS POKER</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="./assets/scss/main.css">
+        <link rel="stylesheet" href="./assets/scss/promotions.css">
+        <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
+            type="image/x-icon">
+        <style>
+            .header__language span:after {
+                display: none;
+            }
+            
+            .rakeback-hero {
+                background: url('./assets/img/rakeback/kk_rakeback_topbanner.png') no-repeat center center;
+                background-size: cover;
+                position: relative;
+                padding: 100px 0;
+                margin-bottom: 0;
+                min-height: 400px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #ffffff;
+            }
+            
+            .rakeback-hero:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+            
+            .rakeback-hero .container {
+                position: relative;
+                z-index: 2;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .rakeback-hero__title {
+                font-size: 48px;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                color: #ffffff;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            
+            .rakeback-hero__subtitle {
+                font-size: 24px;
+                font-family: 'Oswald', sans-serif;
+                margin-bottom: 30px;
+                color: #ffffff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            }
+            
+            .rakeback-hero__btn {
+                display: inline-block;
+                padding: 12px 30px;
+                background-color: #c8a758;
+                color: #ffffff;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 600;
+                font-size: 18px;
+                text-transform: uppercase;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                margin-top: 20px;
+            }
+            
+            .rakeback-hero__btn:hover {
+                background-color: #b69346;
+                transform: translateY(-2px);
+            }
+            
+            .rakeback-info {
+                padding: 60px 0;
+                background-color: #1e1e1e;
+                color: #ffffff;
+                text-align: center;
+            }
+            
+            .rakeback-info__title {
+                font-size: 36px;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 50px;
+                color: #ffffff;
+                text-align: center;
+                position: relative;
+            }
+            
+            .rakeback-info__title:after {
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+                height: 3px;
+                background-color: #c8a758;
+            }
+            
+            .rakeback-info__text {
+                font-size: 18px;
+                max-width: 800px;
+                margin: 0 auto 30px;
+                line-height: 1.6;
+            }
+            
+            .rakeback-info__highlight {
+                color: #c8a758;
+                font-weight: 600;
+            }
+            
+            /* Стили для блока карточек преимуществ рейкбека */
+            .rakeback-features {
+                padding: 60px 0;
+                position: relative;
+                background-image: url('./assets/img/rakeback/kk_rakeback_ksp_background.png');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+                position: relative;
+            }
+
+            
+            .rakeback-features .container {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .rakeback-cards {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                margin-bottom: 60px;
+            }
+            
+            .rakeback-card {
+                text-align: center;
+                padding: 20px;
+                transition: transform 0.3s ease;
+            }
+            
+            .rakeback-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .rakeback-card__image {
+                margin: 0 auto 20px;
+                width: 150px;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            
+            .rakeback-card__image img {
+                max-width: 100%;
+                height: auto;
+                filter: drop-shadow(0 0 10px rgba(200, 167, 88, 0.3));
+            }
+            
+            .rakeback-card__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 22px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                color: #000000DE;
+            }
+            
+            .rakeback-card__text {
+                font-size: 15px;
+                line-height: 1.5;
+                color: #000000DE;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            /* Стили для блока "HOW IT WORKS" */
+            .rakeback-how {
+                text-align: center;
+                padding: 30px 0;
+                position: relative;
+            }
+            
+            .rakeback-how__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                color: #000000DE;
+                letter-spacing: 1px;
+            }
+            
+            .rakeback-how__subtitle {
+                font-size: 18px;
+                color: #000000DE;
+                margin-bottom: 25px;
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+            }
+            
+            .rakeback-how__divider {
+                width: 70px;
+                height: 3px;
+                background-color: #c8a758;
+                margin: 0 auto;
+            }
+            
+            /* Стили для блоков шагов Instant Rakeback */
+            .rakeback-steps {
+                margin-top: 60px;
+            }
+            
+            .rakeback-step {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 60px;
+                padding: 30px 0;
+            }
+            
+            .rakeback-step:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            
+            .rakeback-step__content {
+                flex: 1;
+                padding-right: 40px;
+                max-width: 50%;
+                text-align: left;
+            }
+            
+            .rakeback-step--reverse .rakeback-step__content {
+                order: 2;
+                padding-right: 0;
+                padding-left: 40px;
+            }
+            
+            .rakeback-step__image {
+                flex: 1;
+                text-align: center;
+                max-width: 50%;
+            }
+            
+            .rakeback-step--reverse .rakeback-step__image {
+                order: 1;
+            }
+            
+            .rakeback-step__image img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            .rakeback-step__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: #000000DE;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+            .rakeback-step__title span {
+                color: #957944;
+            }
+            .rakeback-step__text {
+                font-size: 16px;
+                line-height: 1.5;
+                color: #000000DE;
+                margin-bottom: 12px;
+                font-weight: 500;
+            }
+            
+            .rakeback-step__desc {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #000000DE;
+                opacity: 0.9;
+            }
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            
+            .step {
+                background-color: #FAF8F2;
+            }
+            /* Адаптивные стили для шагов */
+            @media (max-width: 992px) {
+                .row {
+                    flex-direction: column;
+                }
+                .rakeback-step {
+                    flex-direction: column;
+                    padding: 20px 0;
+                }
+                
+                .rakeback-step__content, 
+                .rakeback-step--reverse .rakeback-step__content {
+                    order: 1;
+                    max-width: 100%;
+                    padding-right: 0;
+                    padding-left: 0;
+                    margin-bottom: 30px;
+                    text-align: center;
+                }
+                
+                .rakeback-step__image, 
+                .rakeback-step--reverse .rakeback-step__image {
+                    order: 2;
+                    max-width: 100%;
+                }
+                
+                .rakeback-step__title {
+                    font-size: 22px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .rakeback-step {
+                    margin-bottom: 40px;
+                    padding: 15px 0;
+                }
+                
+                .rakeback-step__title {
+                    font-size: 20px;
+                }
+                
+                .rakeback-step__text {
+                    font-size: 15px;
+                }
+                
+                .rakeback-step__desc {
+                    font-size: 13px;
+                }
+            }
+            
+            /* Адаптивные стили */
+            @media (max-width: 992px) {
+                .rakeback-cards {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .rakeback-cards {
+                    grid-template-columns: 1fr;
+                }
+                
+                .rakeback-card {
+                    padding: 15px;
+                }
+                
+                .rakeback-card__image {
+                    width: 100px;
+                    height: 100px;
+                }
+                
+                .rakeback-how__title {
+                    font-size: 28px;
+                }
+                
+                .rakeback-how__subtitle {
+                    font-size: 16px;
+                }
+            }
+            
+            /* Стили для блока уровней рейкбека */
+            .rakeback-levels {
+                padding: 80px 0;
+                background-color: #ffffff;
+                text-align: center;
+            }
+            
+            .rakeback-levels__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+                color: #000000;
+                text-align: center;
+            }
+            
+            .rakeback-levels__description {
+                max-width: 800px;
+                margin: 0 auto 50px;
+            }
+            
+            .rakeback-levels__text {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #000000;
+                margin-bottom: 8px;
+            }
+            
+            .rakeback-levels__table-container {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                overflow-x: auto;
+            }
+            
+            .rakeback-levels__table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            
+            .rakeback-levels__table th,
+            .rakeback-levels__table td {
+                padding: 12px 15px;
+                text-align: center;
+                border: 1px solid #e0e0e0;
+            }
+            
+            .rakeback-levels__table th {
+                background-color: #7b7b7b;
+                color: #ffffff;
+                font-family: 'Oswald', sans-serif;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            
+            .rakeback-levels__table tr:nth-child(even) {
+                background-color: #f5f5f5;
+            }
+            
+            .rakeback-levels__table tr:hover {
+                background-color: #f0f0f0;
+            }
+            
+            .level-cell {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                text-align: left;
+            }
+            
+            .level-number {
+                font-weight: 600;
+                font-size: 18px;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .level-icon {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .level-icon img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .level-name {
+                font-weight: 600;
+                font-family: 'Oswald', sans-serif;
+                text-transform: uppercase;
+            }
+            
+            @media (max-width: 767px) {
+                .rakeback-levels {
+                    padding: 50px 0;
+                }
+                
+                .rakeback-levels__title {
+                    font-size: 28px;
+                    margin-bottom: 30px;
+                }
+                
+                .rakeback-levels__text {
+                    font-size: 14px;
+                }
+                
+                .level-cell {
+                    flex-direction: column;
+                    gap: 5px;
+                    text-align: center;
+                }
+                
+                .level-number {
+                    width: auto;
+                }
+                
+                .level-name {
+                    font-size: 12px;
+                }
+            }
+            
+            /* Стили для блока FAQ */
+            .faq-section {
+                padding: 60px 0;
+                background-color: #f7f7f7;
+            }
+            
+            .faq-section__title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 40px;
+                color: #000000;
+                text-align: center;
+                position: relative;
+            }
+            
+            .faq-section__title:after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+                height: 3px;
+                background-color: #c59d45;
+            }
+            
+            .faq-section__list {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .faq-item {
+                margin-bottom: 15px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .faq-item__header {
+                display: flex;
+                align-items: center;
+                padding: 15px 0;
+                cursor: pointer;
+                position: relative;
+            }
+            
+            .faq-item__icon {
+                width: 20px;
+                height: 20px;
+                display: block;
+                margin-right: 10px;
+                position: relative;
+            }
+            
+            .faq-item__icon:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 6px 0 6px;
+                border-color: #999 transparent transparent transparent;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: transform 0.3s ease, border-color 0.3s ease;
+            }
+            
+            .faq-item__question {
+                font-family: "Oswald", sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                margin: 0;
+            }
+            
+            .faq-item__content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out, visibility 0s ease 0.3s;
+                padding-left: 30px;
+                opacity: 0;
+                visibility: hidden;
+                padding-top: 0;
+            }
+            
+            .faq-item.active .faq-item__content {
+                opacity: 1;
+                visibility: visible;
+                padding-top: 10px;
+                margin-bottom: 10px;
+                transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out, visibility 0s;
+            }
+            
+            .faq-item__content p {
+                margin: 0;
+                padding: 0 0 15px;
+                color: #666;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .faq-item.active .faq-item__icon:before {
+                border-color: #c59d45 transparent transparent transparent;
+                transform: translateY(-50%) rotate(180deg);
+            }
+            
+            .faq-item.active .faq-item__question {
+                font-weight: 600;
+            }
+            
+            .faq-item:not(.active):hover .faq-item__question {
+                color: #000;
+            }
+            
+            .faq-item:not(.active):hover .faq-item__icon:before {
+                border-color: #666 transparent transparent transparent;
+            }
+            
+            @media (max-width: 767px) {
+                .faq-section {
+                    padding: 40px 0;
+                }
+                
+                .faq-section__title {
+                    font-size: 28px;
+                    margin-bottom: 30px;
+                }
+                
+                .faq-item__question {
+                    font-size: 15px;
+                }
+                
+                .faq-item__content p {
+                    font-size: 13px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.svg" alt="NUTS POKER">
+                    </a>
+                </div>
+
+                <nav class="header__nav">
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="#" class="header__nav-link">Tournaments</a>
+                        <div class="header__dropdown-content">
+                            <a href="#" class="header__dropdown-item">MTT
+                                Schedule</a>
+                        </div>
+                    </div>
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="./promotions.html"
+                            class="header__nav-link">Promotions</a>
+                        <div class="header__dropdown-content">
+                            <a href="./match-bonus.html"
+                                class="header__dropdown-item">100% Match
+                                Bonus</a>
+                            <a href="./first-deposit-offer.html"
+                                class="header__dropdown-item">$100 FIRST DEPOSIT
+                                OFFER</a>
+                        </div>
+                    </div>
+                    <a href="./blog.html" class="header__nav-item">Blog</a>
+                </nav>
+
+                <div class="header__actions">
+                    <a href="./instant-rakeback.html"
+                        class="header__actions-item">Instant rake</a>
+                    <div class="header__actions-item header__language">
+                        <span>ЯЗЫК <i class="fas fa-chevron-down"
+                                style="margin-left: 5px; font-size: 12px;"></i></span>
+                        <div class="header__language-dropdown">
+                            <a href="#"
+                                class="header__language-option">English</a>
+                            <a href="#"
+                                class="header__language-option">Русский</a>
+                        </div>
+                    </div>
+                    <a href="./download.html"
+                        class="header__actions-item">Download</a>
+                    <a href="#" class="header__actions-item">Browser play</a>
+                </div>
+
+                <button class="header__burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__container">
+                <nav class="mobile-menu__nav">
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Tournaments</a>
+                    <div class="mobile-menu__dropdown-container">
+                        <a href="#" class="mobile-menu__dropdown-item">MTT
+                            Schedule</a>
+                    </div>
+
+                    <a href="./promotions.html"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Promotions</a>
+                    <div class="mobile-menu__dropdown-container">
+                        <a href="./match-bonus.html"
+                            class="mobile-menu__dropdown-item">100% Match
+                            Bonus</a>
+                        <a href="./first-deposit-offer.html"
+                            class="mobile-menu__dropdown-item">$100 FIRST
+                            DEPOSIT OFFER</a>
+                    </div>
+
+                    <a href="./blog.html" class="mobile-menu__nav-item">Blog</a>
+                    <a href="./instant-rakeback.html"
+                        class="mobile-menu__nav-item">Instant rake</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__language">ЯЗЫК</a>
+                    <div class="mobile-menu__language-options">
+                        <a href="#"
+                            class="mobile-menu__language-option">English</a>
+                        <a href="#"
+                            class="mobile-menu__language-option">Русский</a>
+                    </div>
+                    <a href="./download.html"
+                        class="mobile-menu__nav-item">Download</a>
+                    <a href="#" class="mobile-menu__nav-item">Browser play</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="breadcrumbs__path">
+                    <a href="/" class="breadcrumbs__link">HOME</a>
+                    <span class="breadcrumbs__separator">></span>
+                    <span class="breadcrumbs__current">INSTANT RAKEBACK</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <!-- Блок Герой -->
+        <section class="rakeback-hero">
+            <div class="container">
+                <h1 class="rakeback-hero__title">NEW INSTANT RAKEBACK FOR
+                    ALL!</h1>
+                <p class="rakeback-hero__subtitle">Rakeback rewards INSTANTLY as
+                    soon as your game ends!</p>
+                <a href="#" class="rakeback-hero__btn">START EARNING</a>
+            </div>
+        </section>
+
+        <!-- Блок с информацией о рейкбэке -->
+        <section class="rakeback-info">
+            <div class="container">
+                <h2 class="rakeback-info__title">WHAT'S INSTANT RAKEBACK?</h2>
+                <p class="rakeback-info__text">
+                    Instant Rakeback is a <span
+                        class="rakeback-info__highlight">new Player Reward
+                        system</span> at KKPoker, giving back to reward our
+                    loyal community even more!
+                </p>
+            </div>
+        </section>
+
+        <!-- Блок с карточками преимуществ рейкбека -->
+        <section class="rakeback-features">
+            <div class="rakeback-cards">
+                <!-- Карточка 1: 5% GUARANTEED -->
+                <div class="rakeback-card">
+                    <div class="rakeback-card__image">
+                        <img
+                            src="./assets/img/rakeback/kk_rakeback_roundel1.png"
+                            alt="5% GUARANTEED">
+                    </div>
+                    <h3 class="rakeback-card__title">5% GUARANTEED</h3>
+                    <p class="rakeback-card__text">Everyone is guaranteed at
+                        least 5% rakeback from day one</p>
+                </div>
+
+                <!-- Карточка 2: 50%: THE KING OF KK -->
+                <div class="rakeback-card">
+                    <div class="rakeback-card__image">
+                        <img
+                            src="./assets/img/rakeback/kk_rakeback_roundel2.png"
+                            alt="50%: THE KING OF KK">
+                    </div>
+                    <h3 class="rakeback-card__title">50%: THE KING OF
+                        KK</h3>
+                    <p class="rakeback-card__text">Imagine earning at the
+                        top level 50% rakeback?! More play, more gains!</p>
+                </div>
+
+                <!-- Карточка 3: INSTANT CREDIT -->
+                <div class="rakeback-card">
+                    <div class="rakeback-card__image">
+                        <img
+                            src="./assets/img/rakeback/kk_rakeback_roundel3.png"
+                            alt="INSTANT CREDIT">
+                    </div>
+                    <h3 class="rakeback-card__title">INSTANT CREDIT</h3>
+                    <p class="rakeback-card__text">Collect rakeback after
+                        every game</p>
+                </div>
+
+                <!-- Карточка 4: SIMPLE & CLEAR -->
+                <div class="rakeback-card">
+                    <div class="rakeback-card__image">
+                        <img
+                            src="./assets/img/rakeback/kk_rakeback_roundel4.png"
+                            alt="SIMPLE & CLEAR">
+                    </div>
+                    <h3 class="rakeback-card__title">SIMPLE & CLEAR</h3>
+                    <p class="rakeback-card__text">Clear mechanism & instant
+                        report on rakeback earnings</p>
+                </div>
+            </div>
+        </section>
+        <section class="rakeback-how">
+            <!-- Блок "HOW IT WORKS" -->
+            <div class="rakeback-how">
+                <h2 class="rakeback-how__title">HOW IT WORKS</h2>
+                <p class="rakeback-how__subtitle">INSTANT level up! The more
+                    you play, the more you will be rewarded!</p>
+                <div class="rakeback-how__divider"></div>
+            </div>
+
+            <div class="rakeback-steps">
+                <div class="rakeback-step step">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rakeback-step__content">
+                                <h3 class="rakeback-step__title"><span> STEP
+                                        1</span>: Know
+                                    your
+                                    Instant Rakeback %</h3>
+                                <p class="rakeback-step__text">All KKPoker
+                                    players
+                                    can enjoy the benefits of Instant
+                                    Rakeback!</p>
+                                <p class="rakeback-step__desc">For KK VIPs
+                                    (players
+                                    who have a Set Rakeback %), via their Club,
+                                    that
+                                    will always be the minimum % they receive,
+                                    regardless of if their System Rakeback % is
+                                    lower.</p>
+                            </div>
+                            <div class="rakeback-step__image">
+                                <img
+                                    src="./assets/img/rakeback/kk_rakeback_step1.png"
+                                    alt="Step 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rakeback-step rakeback-step--reverse">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rakeback-step__content">
+                                <h3 class="rakeback-step__title"><span> STEP
+                                        2</span>: Start
+                                    playing to accumulate your EXP!</h3>
+                                <p class="rakeback-step__text">EXP grows based
+                                    on
+                                    fees generated in all poker game types.</p>
+                                <p class="rakeback-step__desc">Every $3 paid
+                                    generates 10 EXP.</p>
+                            </div>
+                            <div class="rakeback-step__image">
+                                <img
+                                    src="./assets/img/rakeback/kk_rakeback_step2.png"
+                                    alt="Step 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rakeback-step step">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rakeback-step__content">
+                                <h3 class="rakeback-step__title"><span>STEP
+                                        3</span>: Level
+                                    up!
+                                    Rakeback up instantly!</h3>
+                                <p class="rakeback-step__text">Fill up your EXP
+                                    bar
+                                    to level up!</p>
+                                <p class="rakeback-step__desc">EXP and the
+                                    30-day
+                                    period will be reset once a new level is
+                                    reached.</p>
+                            </div>
+                            <div class="rakeback-step__image">
+                                <img
+                                    src="./assets/img/rakeback/kk_rakeback_step3.png"
+                                    alt="Step 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rakeback-step rakeback-step--reverse">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rakeback-step__content">
+                                <h3 class="rakeback-step__title"><span>STEP
+                                        4</span>: Enjoy
+                                    the
+                                    extra rewards you deserve!</h3>
+                                <p class="rakeback-step__text">Your rakeback
+                                    will be
+                                    calculated based on your current Instant
+                                    Rakeback % and can be claimed after each
+                                    game.</p>
+                            </div>
+                            <div class="rakeback-step__image">
+                                <img
+                                    src="./assets/img/rakeback/kk_rakeback_step4.png"
+                                    alt="Step 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rakeback-step step">
+                    <div class="container">
+                        <div class="row">
+                            <div class="rakeback-step__content">
+                                <h3 class="rakeback-step__title"><span>STEP
+                                        5</span>: 30-day
+                                    level-up window!</h3>
+                                <p class="rakeback-step__text">From the day you
+                                    start to pay service fees, you have 30 days
+                                    to
+                                    level up!</p>
+                                <p class="rakeback-step__desc">EXP will be reset
+                                    every 30 days OR when a new level is
+                                    achieved.</p>
+                            </div>
+                            <div class="rakeback-step__image">
+                                <img
+                                    src="./assets/img/rakeback/kk_rakeback_step5.png"
+                                    alt="Step 5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок с уровнями рейкбека -->
+        <section class="rakeback-levels">
+            <div class="container">
+                <h2 class="rakeback-levels__title">INSTANT RAKEBACK LEVELS</h2>
+
+                <div class="rakeback-levels__description">
+                    <p class="rakeback-levels__text">Earn EXP to level up. Every
+                        $1 paid on fee generates 10 EXP</p>
+                    <p class="rakeback-levels__text">After you level up, the EXP
+                        and 30-day period will be reset</p>
+                    <p class="rakeback-levels__text">Only 1 level will be
+                        demoted every 30 days period if EXP earned is lower than
+                        the requirement</p>
+                    <p class="rakeback-levels__text">Each level has a 30-day
+                        period to enjoy the rakeback %</p>
+                </div>
+
+                <div class="rakeback-levels__table-container">
+                    <table class="rakeback-levels__table">
+                        <thead>
+                            <tr>
+                                <th>LEVEL</th>
+                                <th>EXP</th>
+                                <th>RAKEBACK %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">1</span>
+                                    <span class="level-name">EXPLORER</span>
+                                </td>
+                                <td>0 - 149</td>
+                                <td>5%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">2</span>
+                                    <span class="level-name">HUNTER</span>
+                                </td>
+                                <td>150 - 599</td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">3</span>
+                                    <span class="level-name">RANGER</span>
+                                </td>
+                                <td>600 - 1,999</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">4</span>
+                                    <span class="level-name">SAMURAI</span>
+                                </td>
+                                <td>2,000 - 5,999</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">5</span>
+                                    <span class="level-name">KNIGHT</span>
+                                </td>
+                                <td>6,000 - 11,999</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">6</span>
+                                    <span class="level-name">BISHOP</span>
+                                </td>
+                                <td>12,000 - 19,999</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td class="level-cell">
+                                    <span class="level-number">7</span>
+                                    <span class="level-name">KING</span>
+                                </td>
+                                <td>≥ 20,000</td>
+                                <td>50%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ секция -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="faq-section__title">FAQ</h2>
+                <div class="faq-section__list">
+                    <!-- FAQ item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-item__header">
+                            <span class="faq-item__icon"></span>
+                            <h3 class="faq-item__question">Does this offer has
+                                time limitation?</h3>
+                        </div>
+                        <div class="faq-item__content">
+                            <p>Yes. You will have a 14-day window from the time
+                                of logging into NUTS POKER App to confirm
+                                whether you want to accept this bonus offer</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-item__header">
+                            <span class="faq-item__icon"></span>
+                            <h3 class="faq-item__question">What will happen if
+                                this offer is expired?</h3>
+                        </div>
+                        <div class="faq-item__content">
+                            <p>If you don't accept this bonus offer within 14
+                                days, it will expire automatically.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ item 3 (активный) -->
+                    <div class="faq-item active">
+                        <div class="faq-item__header">
+                            <span class="faq-item__icon"></span>
+                            <h3 class="faq-item__question">What is NUTS POKER
+                                Cashback Card?</h3>
+                        </div>
+                        <div class="faq-item__content">
+                            <p>Cashback Cards can be used to generate cash
+                                rewards back into your NUTS POKER account once
+                                you earned it via Missions and Events.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-item__header">
+                            <span class="faq-item__icon"></span>
+                            <h3 class="faq-item__question">What is NUTSCoin and
+                                how can it be used?</h3>
+                        </div>
+                        <div class="faq-item__content">
+                            <p>
+                                NUTSCoin are NUTS POKER's in-app currencies. $1
+                                is equivalent to 3000 NUTSCoin. You can use
+                                NUTSCoin to purchase desired items in our shop.
+                                There are also some perks, for example,
+                                discounted Tournament Tickets are exclusively
+                                available for purchase using NUTSCoin
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="container download__container">
+                <div class="download__content">
+                    <h2 class="download__title"><span>СКАЧАТЬ</span> NUTS
+                        POKER</h2>
+                    <div class="download__buttons">
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_android.png"
+                                alt="Download for Android">
+                        </a>
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_app_store.png"
+                                alt="Download for iOS">
+                        </a>
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_windows.png"
+                                alt="Download for Windows">
+                        </a>
+                    </div>
+                </div>
+                <div class="download__image">
+                    <img src="./assets/img/downloadGraphic_nuts.5554761.png"
+                        alt="NUTS POKER App" class="download__image-phone">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__main">
+                    <div class="footer__logo">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/NP_Logo_web.png"
+                            alt="NUTS POKER" class="footer__logo-img">
+                        <p class="footer__domain">NUTSPOKER.CC</p>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        Copyright © NutsPoker. All Rights Reserved.
+                    </div>
+                    <div class="footer__certificates">
+                        <img src="assets/img/footer/1.png"
+                            alt="Gambling License" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/gli.jpeg"
+                            alt="gli"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_08.png"
+                            alt="Security Certificate" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/GambleAware.png"
+                            alt="GambleAware"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_10.png"
+                            alt="18+"
+                            class="footer__cert-img">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./assets/js/main.js"></script>
+        <div id="google_translate_element" style="display: none;"></div>
+    </body>
+</html>

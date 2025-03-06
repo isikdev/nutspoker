@@ -1,0 +1,206 @@
+.header {
+    background-color: $primary-bg;
+    padding: 15px 0;
+
+    &__container {
+        @include flex(row, space-between, center);
+    }
+
+    &__logo {
+        img {
+            height: 40px;
+            width: auto;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 30px;
+
+        &-item {
+            color: $text-white;
+            font-family: $primary-font;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+
+        &-dropdown {
+            position: relative;
+
+            &:hover .header__dropdown-content {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        &-link {
+            color: $text-white;
+            font-family: $primary-font;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            display: inline-block;
+            padding-right: 15px;
+
+            &:hover {
+                color: $accent-color;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid $text-white;
+                transition: border-top-color 0.3s ease;
+            }
+
+            &:hover:after {
+                border-top-color: $accent-color;
+            }
+        }
+    }
+
+    &__dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background-color: $primary-bg;
+        border: 1px solid rgba($text-white, 0.1);
+        z-index: 1000;
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        padding: 10px 0;
+        border-radius: 4px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    &__dropdown-item {
+        display: block;
+        padding: 10px 15px;
+        color: $text-white;
+        font-family: $primary-font;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+
+        &:hover {
+            background-color: rgba($accent-color, 0.1);
+            color: $accent-color;
+        }
+    }
+
+    &__actions {
+        @include flex(row, flex-end, center);
+
+        &-item {
+            margin-left: 20px;
+            color: $text-white;
+            font-family: $primary-font;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+            @include transition(color 0.3s ease);
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+
+    // Стили для языкового меню
+    &__language {
+        position: relative;
+        cursor: pointer;
+
+        span {
+            display: flex;
+            align-items: center;
+            &::after {
+                display: none;
+            }
+        }
+
+        &:hover {
+            span:after {
+                transform: rotate(225deg);
+            }
+
+            .header__language-dropdown {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        &-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 150px;
+            background-color: darken($primary-bg, 5%);
+            border-radius: 4px;
+            padding: 10px 0;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -6px;
+                left: 20px;
+                width: 12px;
+                height: 12px;
+                background: darken($primary-bg, 5%);
+                transform: rotate(45deg);
+                border-radius: 2px;
+            }
+        }
+
+        &-option {
+            display: block;
+            padding: 8px 15px;
+            color: $text-white;
+            font-size: 14px;
+            text-transform: none;
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease;
+
+            &:hover {
+                color: $accent-color;
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+        }
+    }
+}

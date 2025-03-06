@@ -1,0 +1,61 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin responsive($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    // Для обычных брейкпоинтов (min-width)
+    @if $value != null {
+        @if str-index($breakpoint, "-down") {
+            // Для нисходящих брейкпоинтов (max-width)
+            $pure-breakpoint: str-replace($breakpoint, "-down", "");
+            $max-value: map-get($breakpoints, $pure-breakpoint);
+            @if $max-value != null {
+                @media (max-width: $max-value - 1) {
+                    @content;
+                }
+            }
+        } @else {
+            @media (min-width: $value) {
+                @content;
+            }
+        }
+    } @else {
+        @if str-index($breakpoint, "px") {
+            @media (min-width: $breakpoint) {
+                @content;
+            }
+        } @else {
+            @warn "Breakpoint '#{$breakpoint}' not found.";
+        }
+    }
+}
+
+@mixin transition($props...) {
+    transition: $props;
+}
+
+// Функция для замены строк
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace +
+            str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}

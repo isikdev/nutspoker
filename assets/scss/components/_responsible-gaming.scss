@@ -1,0 +1,72 @@
+.responsible-gaming {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.responsible-gaming__container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.responsible-gaming__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 36px;
+    color: #b19252;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.responsible-gaming__text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.responsible-gaming__text p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.responsible-gaming__features {
+    margin-top: 30px;
+}
+
+.responsible-gaming__feature {
+    margin-bottom: 30px;
+    background-color: #f9f9f7;
+    padding: 20px;
+}
+
+.responsible-gaming__feature-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #b19252;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.responsible-gaming__feature-content {
+    color: #333;
+    line-height: 1.6;
+}
+
+.responsible-gaming__feature-content p {
+    margin-bottom: 15px;
+}
+
+.responsible-gaming__screenshot {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.responsible-gaming__screenshot img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,378 @@
+// Стили для страницы Promotions
+
+.promotions-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("https://nutspoker.cc/_nuxt/img/header.798f97d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #9b7732;
+    color: #fff;
+    padding: 60px 0;
+    text-align: left;
+    position: relative;
+    border-bottom: 4px solid #c59d45;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background-color: #e5c07b;
+            margin-top: 15px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        color: #fff;
+        max-width: 600px;
+    }
+}
+
+// Хлебные крошки
+.breadcrumbs {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__path {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        color: #9b7732;
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #c59d45;
+        }
+    }
+
+    &__separator {
+        margin: 0 10px;
+        color: #ccc;
+    }
+
+    &__current {
+        color: #999;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
+
+// Страница акций
+.promotions-page {
+    padding: 40px 0 80px;
+}
+
+// Главная акция
+.main-promotion {
+    display: flex;
+    margin-bottom: 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    &__image {
+        flex: 0 0 40%;
+        background-color: #f0f0f0;
+        min-height: 300px;
+    }
+
+    &__content {
+        flex: 1;
+        padding: 30px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    &__date {
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 15px;
+
+        span {
+            color: #666;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #e8aa3a;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken(#e8aa3a, 10%);
+        }
+    }
+}
+
+// Сетка акций
+.promotions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Карточка акции
+.promotion-card {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    &__image {
+        height: 200px;
+        background-color: #f0f0f0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333;
+        padding: 20px 20px 10px;
+    }
+
+    &__date {
+        font-size: 13px;
+        color: #999;
+        padding: 0 20px 10px;
+
+        span {
+            color: #666;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        color: #666;
+        padding: 0 20px 20px;
+        line-height: 1.5;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 0 20px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #e8aa3a;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken(#e8aa3a, 10%);
+        }
+    }
+}
+
+// Переопределение стилей для языкового меню
+.header__language {
+    position: relative;
+    cursor: pointer;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    &-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #222;
+        min-width: 120px;
+        border-radius: 3px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 10;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        margin-top: 10px;
+        padding: 5px 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid #222;
+        }
+    }
+
+    &-option {
+        display: block;
+        padding: 8px 15px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #333;
+        }
+    }
+
+    &:hover {
+        .header__language-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+// Стили для страницы первого депозита
+.first-deposit-hero {
+    background: url("../img/first_deposit.png") no-repeat center;
+    background-size: 100%;
+    padding: 225px 0;
+    color: #fff;
+    position: relative;
+    min-height: 20vh;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font-family: "Oswald", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    &__subtitle {
+        font-family: "Oswald", sans-serif;
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+}
+
+.deposit-bonus {
+    background-color: #1c1c1c;
+    padding: 40px 0;
+    color: #fff;
+
+    .container {
+        text-align: center;
+    }
+
+    &__title {
+        font-family: "Oswald", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    &__offers {
+        display: flex;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    &__card {
+        flex: 1;
+        background-color: #292929;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &-header {
+            padding: 15px 10px;
+            background-color: #131313;
+            text-align: center;
+        }
+
+        &-title {
+            font-family: "Oswald", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        &-subtitle {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        &-image {
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

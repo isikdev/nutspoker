@@ -1,0 +1,108 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "base";
+@import "components/common";
+@import "components/header";
+@import "components/footer";
+@import "components/buttons";
+@import "components/forms";
+@import "components/hero";
+@import "components/slider";
+@import "components/features";
+@import "components/promotions";
+@import "components/news";
+@import "components/community";
+@import "components/download";
+@import "components/mobile-menu";
+@import "components/responsible-gaming";
+@import "components/download-page";
+@import "promotions";
+@import "upromotions";
+.hero {
+    background-color: #080808;
+}
+.download {
+    background-image: url(../img/bottomBackground.487f3eb.png);
+    background-color: 100%;
+    background-position: bottom;
+}
+.download__buttons {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.download__button img {
+    max-width: 170px;
+    max-height: 50px;
+}
+.download__title {
+    text-align: center;
+}
+
+// Стили для элементов переводчика
+#google_translate_element {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+// Скрываем нижнюю полосу Google Translate
+body {
+    background-color: #ffffff;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    top: 0 !important;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-menu-value:hover {
+    text-decoration: none !important;
+}
+
+// Блок уведомления об ошибке переводчика
+.translator-error {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    z-index: 9999;
+    font-size: 14px;
+    max-width: 280px;
+    animation: fadeOut 0.5s 5s forwards;
+
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

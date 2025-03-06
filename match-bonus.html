@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>100% Match Bonus - NUTS POKER</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="./assets/scss/main.css">
+        <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
+            type="image/x-icon">
+        <style>
+            body {
+                background-color: #080808;
+            }
+            .header__language span:after {
+                display: none;
+            }
+            .promotion-details {
+                padding: 30px 0;
+                color: #fff;
+            }
+            .promotion-container {
+                max-width: 1160px;
+                margin: 0 auto;
+                padding: 0 20px;
+                display: flex;
+            }
+            .promotion-content {
+                flex: 1;
+                padding-right: 30px;
+            }
+            .promotion-sidebar {
+                width: 300px;
+                background-color: #111;
+                padding: 20px;
+                border-radius: 5px;
+            }
+            .promotion-title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: #ffd700;
+                text-transform: uppercase;
+            }
+            .promotion-image {
+                width: 100%;
+                margin-bottom: 30px;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+            .promotion-image img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .promotion-subtitle {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: #ffd700;
+                text-transform: uppercase;
+            }
+            .promotion-steps {
+                margin-bottom: 30px;
+            }
+            .promotion-steps ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .promotion-steps li {
+                position: relative;
+                padding-left: 20px;
+                margin-bottom: 10px;
+                line-height: 1.5;
+            }
+            .promotion-steps li:before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #ffd700;
+                font-size: 18px;
+            }
+            .promotion-table {
+                width: 100%;
+                margin-bottom: 30px;
+                border-collapse: collapse;
+            }
+            .promotion-table th, .promotion-table td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .promotion-table th {
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #ffd700;
+            }
+            .promotion-note {
+                background-color: rgba(255,215,0,0.1);
+                border-left: 3px solid #ffd700;
+                padding: 15px;
+                margin-bottom: 30px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            .promotion-button {
+                background-color: #ffd700;
+                color: #000;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                margin-bottom: 20px;
+            }
+            .promotion-button:hover {
+                background-color: #ffcc00;
+            }
+            .sidebar-title {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 15px;
+                color: #ffd700;
+                text-transform: uppercase;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 10px;
+            }
+            .sidebar-nav {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 30px 0;
+            }
+            .sidebar-nav li {
+                margin-bottom: 10px;
+            }
+            .sidebar-nav a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+                font-size: 14px;
+                display: block;
+            }
+            .sidebar-nav a:hover {
+                color: #ffd700;
+            }
+            .sidebar-nav a.active {
+                color: #ffd700;
+                font-weight: 600;
+            }
+            .breadcrumbs {
+                padding: 15px 0;
+                background-color: #111;
+                margin-bottom: 20px;
+            }
+            .breadcrumbs-container {
+                max-width: 1160px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            .breadcrumbs-path {
+                display: flex;
+                align-items: center;
+            }
+            .breadcrumbs-link {
+                color: #fff;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s;
+            }
+            .breadcrumbs-link:hover {
+                color: #ffd700;
+            }
+            .breadcrumbs-separator {
+                margin: 0 10px;
+                color: rgba(255,255,255,0.5);
+            }
+            .breadcrumbs-current {
+                color: #ffd700;
+                font-size: 14px;
+            }
+            @media (max-width: 991px) {
+                .promotion-container {
+                    flex-direction: column;
+                }
+                .promotion-content {
+                    padding-right: 0;
+                    margin-bottom: 30px;
+                }
+                .promotion-sidebar {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.svg" alt="NUTS POKER">
+                    </a>
+                </div>
+
+                <nav class="header__nav">
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="#" class="header__nav-link">Tournaments</a>
+                        <div class="header__dropdown-content">
+                            <a href="#" class="header__dropdown-item">MTT
+                                Schedule</a>
+                        </div>
+                    </div>
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="./promotions.html"
+                            class="header__nav-link">Promotions</a>
+                        <div class="header__dropdown-content">
+                            <a href="./match-bonus.html"
+                                class="header__dropdown-item">100% Match
+                                Bonus</a>
+                            <a href="./first-deposit-offer.html"
+                                class="header__dropdown-item">$100 FIRST
+                                DEPOSIT OFFER</a>
+                        </div>
+                    </div>
+                    <a href="./blog.html" class="header__nav-item">Blog</a>
+                </nav>
+
+                <div class="header__actions">
+                    <a href="./instant-rakeback.html"
+                        class="header__actions-item">Instant rake</a>
+                    <div class="header__actions-item header__language">
+                        <span>ЯЗЫК <i class="fas fa-chevron-down"
+                                style="margin-left: 5px; font-size: 12px;"></i></span>
+                        <div class="header__language-dropdown">
+                            <a href="#"
+                                class="header__language-option">English</a>
+                            <a href="#"
+                                class="header__language-option">Русский</a>
+                        </div>
+                    </div>
+                    <a href="./download.html"
+                        class="header__actions-item">Download</a>
+                    <a href="#" class="header__actions-item">Browser play</a>
+                </div>
+
+                <button class="header__burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__container">
+                <button class="mobile-menu__close" aria-label="Закрыть меню">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <nav class="mobile-menu__nav">
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Tournaments</a>
+                    <a href="./promotions.html"
+                        class="mobile-menu__nav-item mobile-menu__nav-dropdown">Promotions</a>
+                    <a href="./blog.html" class="mobile-menu__nav-item">Blog</a>
+                    <a href="./instant-rakeback.html"
+                        class="mobile-menu__nav-item">Instant rake</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__language">ЯЗЫК</a>
+                    <div class="mobile-menu__language-options">
+                        <a href="#"
+                            class="mobile-menu__language-option">English</a>
+                        <a href="#"
+                            class="mobile-menu__language-option">Русский</a>
+                    </div>
+                    <a href="./download.html"
+                        class="mobile-menu__nav-item">Download</a>
+                    <a href="#" class="mobile-menu__nav-item">Browser play</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-container">
+                <div class="breadcrumbs-path">
+                    <a href="/" class="breadcrumbs-link">HOME</a>
+                    <span class="breadcrumbs-separator">></span>
+                    <a href="./promotions.html"
+                        class="breadcrumbs-link">PROMOTIONS</a>
+                    <span class="breadcrumbs-separator">></span>
+                    <span class="breadcrumbs-current">100% MATCH FIRST DEPOSIT
+                        POKER BONUS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <section class="promotion-details">
+            <div class="promotion-container">
+                <div class="promotion-content">
+                    <h1 class="promotion-title">100% MATCH FIRST DEPOSIT POKER
+                        BONUS</h1>
+
+                    <div class="promotion-image">
+                        <img
+                            src="./assets/img/match_bonus.png"
+                            alt="100% Match First Deposit Bonus">
+                    </div>
+
+                    <div class="promotion-note">
+                        <p><strong>NUTS POKER First Deposit Bonus: $100 poker
+                                bonus for just a $20 deposit!</strong></p>
+                        <p>Get 5 times your deposit in poker bonuses - what a
+                            deal!</p>
+                    </div>
+
+                    <h2 class="promotion-subtitle">HIGHLIGHTS</h2>
+                    <div class="promotion-steps">
+                        <ul>
+                            <li>Make your first deposit of $20 or more</li>
+                            <li>Receive up to $100 in Bonus</li>
+                            <li>Complete our 5 simple challenges</li>
+                            <li>Get $20 cash for each completed challenge</li>
+                        </ul>
+                    </div>
+
+                    <h2 class="promotion-subtitle">GRINDABLE OVER 30 DAYS FOR
+                        POKER BONUS</h2>
+                    <div class="promotion-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Deposit</th>
+                                    <th>Bonus Received</th>
+                                    <th>Total Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$20</td>
+                                    <td>$100 in bonuses</td>
+                                    <td>$120 total</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>The above is an example of what you could receive. But
+                        the deal is the same - deposit minimum $20 and get up to
+                        $100 in poker bonuses.</p>
+
+                    <h2 class="promotion-subtitle">WHAT ARE WE LOOKING AT?</h2>
+                    <div class="promotion-image">
+                        <img
+                            src="./assets/img/match_bonus.png"
+                            alt="Bonus Example">
+                    </div>
+
+                    <p>The bonus is paid out in 5 installments of $20 each, as
+                        you complete specific challenges in our poker room.
+                        These challenges include playing a certain number of
+                        hands, participating in tournaments, and more.</p>
+
+                    <h2 class="promotion-subtitle">BONUS CASH: 5 CASH OUTS OF
+                        $20 EACH POKER BONUS</h2>
+                    <p>Complete these simple challenges to unlock your bonus
+                        cash:</p>
+                    <ol>
+                        <li>Play 200 cash game hands</li>
+                        <li>Play 5 tournaments with buy-ins of $5+</li>
+                        <li>Win a hand with a full house or better</li>
+                        <li>Play 50 Spin & Go tournaments</li>
+                        <li>Accumulate 500 loyalty points</li>
+                    </ol>
+
+                    <div class="promotion-note">
+                        <p>The challenges must be completed within 30 days of
+                            your first deposit to qualify for the bonus.</p>
+                    </div>
+
+                    <h2 class="promotion-subtitle">HOW CAN I GET IT SOONER?</h2>
+                    <p>You can complete the challenges in any order. The more
+                        you play, the faster you'll earn your bonus!</p>
+
+                    <h2 class="promotion-subtitle">MY POKER BONUS I CAN I CASH
+                        IT OUT?</h2>
+                    <p>The bonus money is automatically added to your account as
+                        real cash as soon as you complete each challenge. There
+                        are no additional wagering requirements - it's yours to
+                        keep!</p>
+
+                    <a href="#" class="promotion-button">DOWNLOAD NOW</a>
+
+                    <h2 class="promotion-subtitle">FAQ</h2>
+                    <p><strong>Q: How long does the First Deposit Bonus
+                            last?</strong><br>
+                        A: You have 30 days from your first deposit to complete
+                        all challenges and claim your full bonus.</p>
+
+                    <p><strong>Q: Can I withdraw the bonus funds?</strong><br>
+                        A: Yes, once credited to your account, the bonus money
+                        is real cash that you can withdraw at any time.</p>
+
+                    <p><strong>Q: Do I need a bonus code to claim this
+                            offer?</strong><br>
+                        A: No, the bonus is automatically applied to all
+                        first-time depositors who deposit $20 or more.</p>
+
+                    <p><strong>Q: Is this offer available in all
+                            countries?</strong><br>
+                        A: This offer is available to players in all countries
+                        where NUTS POKER is licensed to operate.</p>
+                </div>
+
+                <div class="promotion-sidebar">
+                    <h3 class="sidebar-title">MENU</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="#">TOURNAMENTS</a></li>
+                        <li><a href="./promotions.html">PROMOTIONS</a></li>
+                        <li><a href="./match-bonus.html" class="active">100%
+                                MATCH BONUS</a></li>
+                        <li><a href="./first-deposit-offer.html">$100 FIRST
+                                DEPOSIT OFFER</a></li>
+                        <li><a href="./blog.html">BLOG</a></li>
+                        <li><a href="#">INSTANT RAKE</a></li>
+                        <li><a href="#">DOWNLOAD</a></li>
+                        <li><a href="#">BROWSER PLAY</a></li>
+                    </ul>
+
+                    <h3 class="sidebar-title">POKER FEATURES</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#">CASH GAMES</a></li>
+                        <li><a href="#">TOURNAMENT</a></li>
+                        <li><a href="#">SIT & GO</a></li>
+                        <li><a href="#">FAST POKER</a></li>
+                        <li><a href="#">SPIN & GO</a></li>
+                    </ul>
+
+                    <h3 class="sidebar-title">POKER GAMES</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#">TEXAS HOLD'EM</a></li>
+                        <li><a href="#">OMAHA</a></li>
+                        <li><a href="#">OMAHA HI/LO</a></li>
+                        <li><a href="#">CRAZY PINEAPPLE</a></li>
+                        <li><a href="#">5 CARD OMAHA</a></li>
+                        <li><a href="#">6+ HOLD'EM</a></li>
+                    </ul>
+
+                    <h3 class="sidebar-title">SUPPORT</h3>
+                    <ul class="sidebar-nav">
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">TERMS & CONDITIONS</a></li>
+                        <li><a href="#">PRIVACY POLICY</a></li>
+                        <li><a href="#">RESPONSIBLE GAMING</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__main">
+                    <div class="footer__logo">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/NP_Logo_web.png"
+                            alt="NUTS POKER" class="footer__logo-img">
+                        <p class="footer__domain">NUTSPOKER.CC</p>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        Copyright © NutsPoker. All Rights Reserved.
+                    </div>
+                    <div class="footer__certificates">
+                        <img src="assets/img/footer/1.png"
+                            alt="Gambling License" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/gli.jpeg"
+                            alt="gli"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_08.png"
+                            alt="Security Certificate" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/GambleAware.png"
+                            alt="GambleAware"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_10.png"
+                            alt="18+"
+                            class="footer__cert-img">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./assets/js/main.js"></script>
+        <div id="google_translate_element" style="display: none;"></div>
+    </body>
+</html>

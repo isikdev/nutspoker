@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Главная - Nutspoker</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="./assets/scss/main.css">
+        <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
+            type="image/x-icon">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.svg" alt="NUTS POKER">
+                    </a>
+                </div>
+
+                <nav class="header__nav">
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="#" class="header__nav-link">Tournaments</a>
+                        <div class="header__dropdown-content">
+                            <a href="#" class="header__dropdown-item">MTT
+                                Schedule</a>
+                        </div>
+                    </div>
+                    <div class="header__nav-item header__nav-dropdown">
+                        <a href="./promotions.html"
+                            class="header__nav-link">Promotions</a>
+                        <div class="header__dropdown-content">
+                            <a href="./match-bonus.html"
+                                class="header__dropdown-item">100% Match
+                                Bonus</a>
+                            <a href="./first-deposit-offer.html"
+                                class="header__dropdown-item">$100 FIRST
+                                DEPOSIT OFFER</a>
+                        </div>
+                    </div>
+                    <a href="./blog.html" class="header__nav-item">Blog</a>
+                </nav>
+
+                <div class="header__actions">
+                    <a href="./instant-rakeback.html"
+                        class="header__actions-item">Instant rake</a>
+                    <div class="header__actions-item header__language">
+                        <span>ЯЗЫК <i class="fas fa-chevron-down"
+                                style="margin-left: 5px; font-size: 12px;"></i></span>
+                        <div class="header__language-dropdown">
+                            <a href="#"
+                                class="header__language-option">English</a>
+                            <a href="#"
+                                class="header__language-option">Русский</a>
+                        </div>
+                    </div>
+                    <a href="./download.html"
+                        class="header__actions-item">Download</a>
+                    <a href="#" class="header__actions-item">Browser play</a>
+                </div>
+
+                <button class="header__burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <div class="mobile-menu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__container">
+                <button class="mobile-menu__close" aria-label="Закрыть меню">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <nav class="mobile-menu__nav">
+                    <a href="#" class="mobile-menu__nav-item">Tournaments</a>
+                    <a href="#" class="mobile-menu__nav-item">Promotions</a>
+                    <a href="#" class="mobile-menu__nav-item">Blog</a>
+                    <a href="./instant-rakeback.html"
+                        class="mobile-menu__nav-item">Instant rake</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item">ЯЗЫК</a>
+                    <a href="./download.html"
+                        class="mobile-menu__nav-item">Download</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item">Browser play</a>
+                </nav>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Power up your <span
+                            class="hero__title-accent">POKER</span> game</h1>
+                    <p class="hero__text">Join NUTS POKER and experience
+                        cutting-edge features, exciting tournaments, and awesome
+                        bonuses!</p>
+                    <div class="hero__buttons">
+                        <a href="#" class="button button--primary">Play Now</a>
+                        <a href="#" class="button button--secondary">Learn
+                            More</a>
+                    </div>
+                </div>
+                <div class="hero__slider">
+                    <div class="slider">
+                        <div class="slider__track">
+                            <div class="slider__slide">
+                                <img src="./assets/img/slider/banner1.jpg"
+                                    alt="Slide 1" class="slider__image">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="./assets/img/slider/banner2.jpg"
+                                    alt="Slide 2" class="slider__image">
+                            </div>
+                            <div class="slider__slide">
+                                <img src="./assets/img/slider/banner3.jpg"
+                                    alt="Slide 3" class="slider__image">
+                            </div>
+                        </div>
+                        <div class="slider__dots">
+                            <button class="slider__dot slider__dot--active"
+                                data-index="0"></button>
+                            <button class="slider__dot" data-index="1"></button>
+                            <button class="slider__dot" data-index="2"></button>
+                        </div>
+                        <button class="slider__arrow slider__arrow--prev">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="white"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="slider__arrow slider__arrow--next">
+                            <svg viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="white"
+                                    stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose <span
+                        class="section-title__accent">NUTS POKER</span></h2>
+                <div class="features__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="./assets/img/features/icon1.svg"
+                                alt="Fast Tables">
+                        </div>
+                        <h3 class="feature-card__title">Fast Tables</h3>
+                        <p class="feature-card__text">Experience lightning-fast
+                            gameplay with our optimized table mechanics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="./assets/img/features/icon2.svg"
+                                alt="Secure Platform">
+                        </div>
+                        <h3 class="feature-card__title">Secure Platform</h3>
+                        <p class="feature-card__text">Play with peace of mind on
+                            our fully encrypted and secure poker platform.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="./assets/img/features/icon3.svg"
+                                alt="Mobile Ready">
+                        </div>
+                        <h3 class="feature-card__title">Mobile Ready</h3>
+                        <p class="feature-card__text">Play your favorite poker
+                            games anytime, anywhere on our mobile app.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <img src="./assets/img/features/icon4.svg"
+                                alt="24/7 Support">
+                        </div>
+                        <h3 class="feature-card__title">24/7 Support</h3>
+                        <p class="feature-card__text">Our dedicated support team
+                            is always ready to assist you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promotions">
+            <div class="container">
+                <h2 class="section-title">Latest <span
+                        class="section-title__accent">Promotions</span></h2>
+                <div class="promotions__grid">
+                    <div class="promotion-card">
+                        <div class="promotion-card__image">
+                            <img src="./assets/img/promotions/promo1.jpg"
+                                alt="Welcome Bonus">
+                        </div>
+                        <div class="promotion-card__content">
+                            <h3 class="promotion-card__title">Welcome Bonus</h3>
+                            <p class="promotion-card__text">Get up to $1000 on
+                                your first deposit with our 100% match
+                                bonus.</p>
+                            <a href="#"
+                                class="promotion-card__button button button--secondary">Claim
+                                Now</a>
+                        </div>
+                    </div>
+                    <div class="promotion-card">
+                        <div class="promotion-card__image">
+                            <img src="./assets/img/promotions/promo2.jpg"
+                                alt="Weekend Tournaments">
+                        </div>
+                        <div class="promotion-card__content">
+                            <h3 class="promotion-card__title">Weekend
+                                Tournaments</h3>
+                            <p class="promotion-card__text">Join our special
+                                weekend tournaments with guaranteed prize
+                                pools.</p>
+                            <a href="#"
+                                class="promotion-card__button button button--secondary">View
+                                Schedule</a>
+                        </div>
+                    </div>
+                    <div class="promotion-card">
+                        <div class="promotion-card__image">
+                            <img src="./assets/img/promotions/promo3.jpg"
+                                alt="Rakeback Rewards">
+                        </div>
+                        <div class="promotion-card__content">
+                            <h3 class="promotion-card__title">Rakeback
+                                Rewards</h3>
+                            <p class="promotion-card__text">Earn up to 30%
+                                rakeback on every hand you play.</p>
+                            <a href="#"
+                                class="promotion-card__button button button--secondary">Learn
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <h2 class="section-title">Latest <span
+                        class="section-title__accent">News</span></h2>
+                <div class="news__grid">
+                    <div class="news-card">
+                        <div class="news-card__image">
+                            <img src="./assets/img/news/news1.jpg"
+                                alt="New Tournament Series">
+                        </div>
+                        <div class="news-card__content">
+                            <div class="news-card__date">June 15, 2023</div>
+                            <h3 class="news-card__title">New Tournament Series
+                                Announced</h3>
+                            <p class="news-card__text">Join our upcoming
+                                tournament series with over $1 million in
+                                guaranteed prizes.</p>
+                            <a href="#" class="news-card__link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-card__image">
+                            <img src="./assets/img/news/news2.jpg"
+                                alt="Mobile App Update">
+                        </div>
+                        <div class="news-card__content">
+                            <div class="news-card__date">June 10, 2023</div>
+                            <h3 class="news-card__title">Mobile App Update
+                                Released</h3>
+                            <p class="news-card__text">Our latest mobile app
+                                update brings new features and improvements.</p>
+                            <a href="#" class="news-card__link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-card__image">
+                            <img src="./assets/img/news/news3.jpg"
+                                alt="Poker Strategy Guide">
+                        </div>
+                        <div class="news-card__content">
+                            <div class="news-card__date">June 5, 2023</div>
+                            <h3 class="news-card__title">Ultimate Poker Strategy
+                                Guide</h3>
+                            <p class="news-card__text">Learn from the pros with
+                                our comprehensive poker strategy guide.</p>
+                            <a href="#" class="news-card__link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="community">
+            <div class="container community__container">
+                <div class="community__content">
+                    <h2 class="community__title">Join Our
+                        <span>Community</span></h2>
+                    <p class="community__text">Connect with players from around
+                        the world, share your poker journey, and stay updated
+                        with the latest news and events.</p>
+                    <a href="#"
+                        class="community__button button button--primary">Join
+                        Now</a>
+                    <div class="community__icon">
+                        <svg viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18L15 12L9 6" stroke="white"
+                                stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="community__social">
+                    <a href="#"
+                        class="community__social-link community__social-link--youtube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#"
+                        class="community__social-link community__social-link--twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="#"
+                        class="community__social-link community__social-link--facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="community__social-link community__social-link--instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="download">
+            <div class="container download__container">
+                <div class="download__content">
+                    <h2 class="download__title">DOWNLOAD <span>NUTS
+                            POKER</span></h2>
+                    <div class="download__buttons">
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_android.png"
+                                alt="Download for Android">
+                        </a>
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_app_store.png"
+                                alt="Download for iOS">
+                        </a>
+                        <a href="#" class="download__button">
+                            <img src="./assets/img/download_windows.png"
+                                alt="Download for Windows">
+                        </a>
+                    </div>
+                </div>
+                <div class="download__image">
+                    <img src="./assets/img/downloadGraphic_nuts.5554761.png"
+                        alt="NUTS POKER App" class="download__image-phone">
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__main">
+                    <div class="footer__logo">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/NP_Logo_web.png"
+                            alt="NUTS POKER" class="footer__logo-img">
+                        <p class="footer__domain">NUTSPOKER.CC</p>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        Copyright © NutsPoker. All Rights Reserved.
+                    </div>
+                    <div class="footer__certificates">
+                        <img src="assets/img/footer/1.png"
+                            alt="Gambling License" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/gli.jpeg"
+                            alt="gli"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_08.png"
+                            alt="Security Certificate" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/GambleAware.png"
+                            alt="GambleAware"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_10.png"
+                            alt="18+"
+                            class="footer__cert-img">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./assets/js/main.js"></script>
+        <div id="google_translate_element"></div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-family: $primary-font;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    @include transition(all 0.3s ease);
+
+    &--primary {
+        background-color: $accent-color;
+        color: $primary-bg;
+
+        &:hover {
+            background-color: lighten($accent-color, 10%);
+        }
+    }
+
+    &--download {
+        max-width: 190px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .text {
+            text-align: left;
+
+            .small {
+                font-size: 12px;
+                display: block;
+                opacity: 0.8;
+            }
+
+            .large {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -1,0 +1,263 @@
+.header {
+    &__burger {
+        display: none;
+        width: 30px;
+        height: 24px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1002;
+
+        @media (max-width: 767px) {
+            display: flex !important;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $text-white;
+            border-radius: 2px;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    transform: translateY(10px) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    // Скрываем основную навигацию и действия на мобильных устройствах
+    &__nav,
+    &__actions {
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0.3s ease;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &__container {
+        position: absolute;
+        top: 0;
+        right: -320px;
+        width: 300px;
+        height: 100%;
+        background-color: $primary-bg;
+        padding: 30px 20px;
+        overflow-y: auto;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__close {
+        align-self: flex-end;
+        background: transparent;
+        border: none;
+        color: $text-white;
+        cursor: pointer;
+        padding: 5px;
+        margin-bottom: 20px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        &-item {
+            color: $text-white;
+            font-family: $primary-font;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba($text-white, 0.1);
+            transition: color 0.3s ease;
+            text-decoration: none;
+
+            &:hover {
+                color: $accent-color;
+            }
+
+            // Стили для элемента языкового меню
+            &.mobile-menu__language {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    margin-left: 8px;
+                    border-right: 2px solid $text-white;
+                    border-bottom: 2px solid $text-white;
+                    transform: rotate(45deg);
+                    transition: transform 0.3s ease;
+                }
+
+                &.active:after {
+                    transform: rotate(-135deg);
+                }
+            }
+
+            // Стили для элементов с выпадающим меню
+            &.mobile-menu__nav-dropdown {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    margin-left: 8px;
+                    border-right: 2px solid $text-white;
+                    border-bottom: 2px solid $text-white;
+                    transform: rotate(45deg);
+                    transition: transform 0.3s ease;
+                }
+
+                &.active:after {
+                    transform: rotate(-135deg);
+                    margin-bottom: -5px;
+                }
+            }
+        }
+    }
+
+    // Стили для выпадающего языкового меню
+    &__language-options {
+        display: none;
+        padding: 10px 0;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__language-option {
+        display: block;
+        padding: 10px 15px;
+        color: $text-white;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: none;
+        transition: color 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    // Стили для выпадающего подменю в мобильной версии
+    &__dropdown-container {
+        display: block;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        &.active {
+            max-height: 500px; // Достаточно большое значение для анимации
+            opacity: 1;
+            margin: 5px 0 10px 15px;
+        }
+    }
+
+    &__dropdown-item {
+        display: block;
+        padding: 12px 15px;
+        color: $text-white;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba($text-white, 0.05);
+        transition: color 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+            color: $accent-color;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    // Когда меню активно
+    &.active {
+        visibility: visible;
+        pointer-events: auto;
+
+        .mobile-menu__overlay {
+            opacity: 1;
+        }
+
+        .mobile-menu__container {
+            right: 0;
+        }
+    }
+}

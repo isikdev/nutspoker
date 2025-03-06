@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promotions - NUTS POKER</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="./assets/scss/main.css">
+        <link rel="shortcut icon" href="https://nutspoker.cc/fav.png"
+            type="image/x-icon">
+        <style>
+                body {
+                    background: transparent;
+                }
+                .header__language span:after {
+                    display: none;
+                }
+            </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="./assets/img/logo.svg" alt="NUTS POKER">
+                    </a>
+                </div>
+
+                <nav class="header__nav">
+                    <a href="#" class="header__nav-item">Tournaments</a>
+                    <a href="./promotions.html"
+                        class="header__nav-item">Promotions</a>
+                    <a href="./blog.html" class="header__nav-item">Blog</a>
+                </nav>
+
+                <div class="header__actions">
+                    <a href="./instant-rakeback.html"
+                        class="header__actions-item">Instant rake</a>
+                    <div class="header__actions-item header__language">
+                        <span>ЯЗЫК <i class="fas fa-chevron-down"
+                                style="margin-left: 5px; font-size: 12px;"></i></span>
+                        <div class="header__language-dropdown">
+                            <a href="#"
+                                class="header__language-option">English</a>
+                            <a href="#"
+                                class="header__language-option">Русский</a>
+                        </div>
+                    </div>
+                    <a href="./download.html"
+                        class="header__actions-item">Download</a>
+                    <a href="#" class="header__actions-item">Browser play</a>
+                </div>
+
+                <button class="header__burger" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu">
+            <div class="mobile-menu__overlay"></div>
+            <div class="mobile-menu__container">
+                <button class="mobile-menu__close" aria-label="Закрыть меню">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <nav class="mobile-menu__nav">
+                    <a href="#" class="mobile-menu__nav-item">Tournaments</a>
+                    <a href="./promotions.html"
+                        class="mobile-menu__nav-item active">Promotions</a>
+                    <a href="./blog.html"
+                        class="mobile-menu__nav-item active">Blog</a>
+                    <a href="./instant-rakeback.html"
+                        class="mobile-menu__nav-item">Instant rake</a>
+                    <a href="#"
+                        class="mobile-menu__nav-item mobile-menu__language">ЯЗЫК</a>
+                    <div class="mobile-menu__language-options">
+                        <a href="#"
+                            class="mobile-menu__language-option">English</a>
+                        <a href="#"
+                            class="mobile-menu__language-option">Русский</a>
+                    </div>
+                    <a href="./download.html"
+                        class="mobile-menu__nav-item">Download</a>
+                    <a href="#" class="mobile-menu__nav-item">Browser play</a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Баннер акций -->
+        <section class="promotions-banner">
+            <div class="container">
+                <h1 class="promotions-banner__title">BLOG</h1>
+                <p class="promotions-banner__subtitle">Check out the latest NUTS
+                    POKER offers</p>
+            </div>
+        </section>
+
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="breadcrumbs__path">
+                    <a href="/" class="breadcrumbs__link">HOME</a>
+                    <span class="breadcrumbs__separator">></span>
+                    <span class="breadcrumbs__current">BLOG</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Страница акций -->
+        <main class="promotions-page">
+            <div class="container">
+                <!-- Сетка карточек акций -->
+                <div class="promotions-grid">
+                    <!-- Карточка 1 -->
+                    <div class="promotion-card">
+                        <div class="promotion-card__image"
+                            style="background-image: url('https://via.placeholder.com/400x200/222/gold?text=$500K+MYSTERY+GLORY');"></div>
+                        <h3 class="promotion-card__title">$500K MYSTERY GLORY:
+                            4TH...</h3>
+                        <div class="promotion-card__date">Posted by
+                            <span>KKPoker</span> | 2024-07-31</div>
+                        <p class="promotion-card__text">Join KKLIVE SÃO PAULO -
+                            BRL 400K GTD! From 12 - 15 September at the Novotel
+                            Center Norte. KKPoker's first live poker event in
+                            Brazil! NO RAKE and BRL 400,000 GTD</p>
+                        <a href="#" class="promotion-card__link">READ MORE</a>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="promotion-card">
+                        <div class="promotion-card__image"
+                            style="background-image: url('https://via.placeholder.com/400x200/222/gold?text=CASH+GAME+LEADERBOARD');"></div>
+                        <h3 class="promotion-card__title">CASH GAME
+                            LEADERBOARD</h3>
+                        <div class="promotion-card__date">Posted by
+                            <span>KKPoker</span> | 2024-07-31</div>
+                        <p class="promotion-card__text">Popular Latin America
+                            live event returns through August & September!</p>
+                        <a href="#" class="promotion-card__link">READ MORE</a>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="promotion-card">
+                        <div class="promotion-card__image"
+                            style="background-image: url('https://via.placeholder.com/400x200/222/gold?text=MICRO+MASTER');"></div>
+                        <h3 class="promotion-card__title">$135,000+ MICRO
+                            MASTER...</h3>
+                        <div class="promotion-card__date">Posted by
+                            <span>KKPoker</span> | 2024-07-30</div>
+                        <p class="promotion-card__text">KKPoker partners with
+                            Battle of Malta & Malta Poker Festival to offer
+                            fantastic live poker packages!</p>
+                        <a href="#" class="promotion-card__link">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__main">
+                    <div class="footer__logo">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/NP_Logo_web.png"
+                            alt="NUTS POKER" class="footer__logo-img">
+                        <p class="footer__domain">NUTSPOKER.CC</p>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <div class="footer__copyright">
+                        Copyright © NutsPoker. All Rights Reserved.
+                    </div>
+                    <div class="footer__certificates">
+                        <img src="assets/img/footer/1.png"
+                            alt="Gambling License" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/gli.jpeg"
+                            alt="gli"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_08.png"
+                            alt="Security Certificate" class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/GambleAware.png"
+                            alt="GambleAware"
+                            class="footer__cert-img">
+                        <img
+                            src="https://nutspoker.cc/img/layout/footer/icon_10.png"
+                            alt="18+"
+                            class="footer__cert-img">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Скрипты -->
+        <script src="./assets/js/main.js"></script>
+        <div id="google_translate_element" style="display: none;"></div>
+        <script>
+            // Инициализация переводчика после загрузки страницы
+            document.addEventListener('DOMContentLoaded', function() {
+                // Запускаем инициализацию переводчика
+                if (typeof initTranslator === 'function') {
+                    initTranslator();
+                }
+            });
+        </script>
+    </body>
+</html>

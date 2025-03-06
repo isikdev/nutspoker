@@ -1,0 +1,58 @@
+$container-width: 1240px;
+$container-padding: 20px;
+
+.container {
+    max-width: $container-width;
+    padding: 0 $container-padding;
+    margin: 0 auto;
+    width: 100%;
+}
+
+body {
+    font-family: $primary-font;
+    background-color: $primary-bg;
+    color: $text-white;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: $secondary-font;
+    font-weight: 700;
+}
+
+.font-bold {
+    font-weight: 700;
+    color: $bold-color;
+}
+
+strong,
+b {
+    color: $bold-color;
+}
